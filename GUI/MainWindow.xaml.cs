@@ -28,6 +28,7 @@ namespace GUI
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("I am a huge faggotv2", "I am a huge faggot");
+            //Kommentar fra Mohammed.
         }
 
     }
