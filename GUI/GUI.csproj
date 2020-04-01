@@ -83,6 +83,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ServiceLayer\ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -125,7 +126,6 @@
     <Folder Include="ControlLayer\" />
     <Folder Include="ModelLayer\" />
     <Folder Include="PresentationLayer\" />
-    <Folder Include="ServiceLayer\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
