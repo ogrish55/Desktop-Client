@@ -10,8 +10,6 @@ namespace GUI.ControlLayer
 {
     public class ProductControl
     {
-DeleteProduct
-
         public IEnumerable<GUI.ProductServiceReference.Product> GetAllProducts()
         {
             ProductService ps = new ProductService();
