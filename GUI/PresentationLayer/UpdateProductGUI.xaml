@@ -6,13 +6,16 @@
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
         Title="UpdateProductGUI" Height="450" Width="800">
-    <Grid>
-        <Label Name="lblName" Content="Name:" HorizontalAlignment="Left" Margin="42,98,0,0" VerticalAlignment="Top"/>
-        <Label Name="lblPrice" Content="Price:" HorizontalAlignment="Left" Margin="50,133,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="txtName" HorizontalAlignment="Left" Height="23" Margin="142,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="txtPrice" HorizontalAlignment="Left" Height="23" Margin="142,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <DataGrid Name="productGrid" HorizontalAlignment="Left" Height="370" Margin="315,10,0,0" VerticalAlignment="Top" Width="421" RenderTransformOrigin="0.498,0.506"/>
+    <Grid RenderTransformOrigin="0.652,0.447">
+        <Label Name="lblName" Content="Name:" HorizontalAlignment="Left" Margin="30,48,0,0" VerticalAlignment="Top"/>
+        <Label Name="lblPrice" Content="Price:" HorizontalAlignment="Left" Margin="30,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.441,0.498"/>
+        <TextBox Name="txtName" HorizontalAlignment="Left" Height="23" Margin="131,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="txtPrice" HorizontalAlignment="Left" Height="23" Margin="131,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.484,0.688"/>
         <TextBox Name="txtSearch" HorizontalAlignment="Left" Height="23" Margin="315,380,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="120"/>
+        <ListBox Name="listProducts" HorizontalAlignment="Left" Height="365" Margin="315,10,0,0" VerticalAlignment="Top" Width="410"/>
+        <Label Name="lblDescription" Content="Description:" HorizontalAlignment="Left" Margin="30,142,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtDescription" HorizontalAlignment="Left" Height="197" Margin="39,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
+        <Button Name="btnDone" Content="Done" HorizontalAlignment="Left" Margin="650,384,0,0" VerticalAlignment="Top" Width="75" Click="btnDone_Click"/>
 
     </Grid>
 </Window>
