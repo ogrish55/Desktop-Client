@@ -10,7 +10,6 @@ namespace GUI.ControlLayer
 {
     public class ProductControl
     {
-DeleteProduct
 
         public IEnumerable<GUI.ProductServiceReference.Product> GetAllProducts()
         {
@@ -18,7 +17,6 @@ DeleteProduct
             
             return ps.GetAllProducts();
         }
-
 
         public void AddProduct(GUI.ProductServiceReference.Product product)
         {

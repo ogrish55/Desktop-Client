@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.ControlLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,15 @@ namespace GUI.PresentationLayer
     /// </summary>
     public partial class DeleteProductGUI : Window
     {
+        private ProductControl _productControl;
+
         public DeleteProductGUI()
         {
+            _productControl = new ProductControl();
+
             InitializeComponent();
+
+            UpdateListBoxProducts();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -38,12 +45,12 @@ namespace GUI.PresentationLayer
 
         private void UpdateListBoxProducts()
         {
-            //var allProducts = _productController.GetAll();
-            //listBoxProducts.Items.Clear();
-            //foreach (Product prod in allProducts)
-            //{
-            //    listBoxProducts.Items.Add(prod);
-            //}
+            var allProducts = _productControl.GetAllProducts();
+            listBoxProducts.Items.Clear();
+            foreach (GUI.ProductServiceReference.Product product in allProducts)
+            {
+                listBoxProducts.Items.Add(product);
+            }
         }
 
     }
