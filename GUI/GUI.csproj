@@ -57,7 +57,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="UpdateProductGUI.xaml.cs">
+    <Compile Include="PresentationLayer\UpdateProductGUI.xaml.cs">
       <DependentUpon>UpdateProductGUI.xaml</DependentUpon>
     </Compile>
     <Page Include="PresentationLayer\AddProduct.xaml">
@@ -85,7 +85,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UpdateProductGUI.xaml">
+    <Page Include="PresentationLayer\UpdateProductGUI.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
