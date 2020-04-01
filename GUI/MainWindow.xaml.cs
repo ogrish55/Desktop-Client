@@ -25,9 +25,11 @@ namespace GUI
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("I am a huge faggotv2", "I am a huge faggot");
+            AddProduct addProductWindow = new AddProduct();
+            addProductWindow.Show();
+            this.Hide();
         }
 
     }

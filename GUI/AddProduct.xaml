@@ -1,0 +1,19 @@
+﻿<Window x:Class="GUI.AddProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="AddProduct" Height="450" Width="800">
+    <Grid>
+        <Button Content="Back" HorizontalAlignment="Left" Height="30" Margin="669,379,0,0" VerticalAlignment="Top" Width="100" Click="BackBtn_Click"/>
+        <Button Content="Add Product" HorizontalAlignment="Left" Height="30" Margin="550,379,0,0" VerticalAlignment="Top" Width="100" Click="AddBtn_Click"/>
+        <Label Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,25,0,0"/>
+        <Label Content="Price" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,55,0,0" RenderTransformOrigin="1.643,0.531"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="14,85,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="101,25,0,0" Name="NameTxt"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="101,55,0,0" Name="PriceTxt"/>
+        <TextBox HorizontalAlignment="Left" Height="216" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="450" Margin="101,85,0,0" Name="DescriptionTxt"/>
+    </Grid>
+</Window>
