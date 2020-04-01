@@ -10,13 +10,13 @@ namespace GUI.ControlLayer
 {
     public class ProductControl
     {
+      
         public IEnumerable<GUI.ProductServiceReference.Product> GetAllProducts()
         {
             ProductService ps = new ProductService();
             
             return ps.GetAllProducts();
         }
-
 
         public void AddProduct(GUI.ProductServiceReference.Product product)
         {
