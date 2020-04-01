@@ -32,5 +32,11 @@ namespace GUI
             this.Hide();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window updateProductWindow = new UpdateProductGUI();
+            updateProductWindow.Show();
+            this.Hide();
+        }
     }
 }
