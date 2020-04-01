@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.PresentationLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,6 +37,13 @@ namespace GUI
         {
             Window updateProductWindow = new UpdateProductGUI();
             updateProductWindow.Show();
+            this.Hide();
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteProductGUI deleteProductWindow = new DeleteProductGUI();
+            deleteProductWindow.Show();
             this.Hide();
         }
     }

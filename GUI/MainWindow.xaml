@@ -9,6 +9,7 @@
     <Grid>
         <Button Content="Add Product" HorizontalAlignment="Left" Height="33" Margin="328,280,0,0" VerticalAlignment="Top" Width="100" Click="AddBtn_Click"/>
         <Button Content="Update product" HorizontalAlignment="Left" Margin="317,228,0,0" VerticalAlignment="Top" Width="123" RenderTransformOrigin="0.744,-0.083" Click="Button_Click"/>
+        <Button Content="Delete Product" HorizontalAlignment="Left" Height="32" Margin="328,329,0,0" VerticalAlignment="Top" Width="100" Click="DeleteBtn_Click"/>
 
     </Grid>
 </Window>
