@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.ControlLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace GUI
     /// </summary>
     public partial class AddProduct : Window
     {
+
+        ProductControl productControl;
         public AddProduct()
         {
             InitializeComponent();
+            productControl = new ProductControl();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -35,6 +39,13 @@ namespace GUI
         {
             if (CheckForInput())
             {
+                GUI.ProductServiceReference.Product product = new ProductServiceReference.Product
+                {
+                    Name = NameTxt.Text,
+                    Price = Convert.ToDecimal(PriceTxt.Text),
+                    Description = DescriptionTxt.Text
+                };
+                productControl.AddProduct(product);
 
             }
             else
