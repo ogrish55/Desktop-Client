@@ -50,6 +50,7 @@ namespace GUI.PresentationLayer
             foreach (GUI.ProductServiceReference.Product product in allProducts)
             {
                 listBoxProducts.Items.Add(product);
+                // mangler at printe toString metoden i listen
             }
         }
 
