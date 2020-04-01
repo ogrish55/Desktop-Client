@@ -46,6 +46,7 @@ namespace GUI
                     Description = DescriptionTxt.Text
                 };
                 productControl.AddProduct(product);
+                MessageBox.Show(product.Name + " Successfully added to database");
 
             }
             else
