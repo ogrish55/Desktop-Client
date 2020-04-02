@@ -56,7 +56,7 @@ namespace GUI.PresentationLayer
             listBoxProducts.Items.Clear();
             foreach (Product product in allProducts)
             {
-                listBoxProducts.Items.Add(product.ToString());
+                listBoxProducts.Items.Add(product);
                 // mangler at printe toString metoden i listen
             }
         }
