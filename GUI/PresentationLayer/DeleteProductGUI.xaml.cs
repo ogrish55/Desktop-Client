@@ -40,7 +40,13 @@ namespace GUI.PresentationLayer
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            GUI.ProductServiceReference.Product selectedProduct;
+            selectedProduct = (GUI.ProductServiceReference.Product)listBoxProducts.SelectedItem;
+            if (selectedProduct != null)
+            {
+                _productControl.DeleteProduct(selectedProduct.ProdutId);
+                UpdateListBoxProducts();
+            }
         }
 
         private void UpdateListBoxProducts()
@@ -49,7 +55,7 @@ namespace GUI.PresentationLayer
             listBoxProducts.Items.Clear();
             foreach (GUI.ProductServiceReference.Product product in allProducts)
             {
-                listBoxProducts.Items.Add(product);
+                listBoxProducts.Items.Add(product.ToString());
                 // mangler at printe toString metoden i listen
             }
         }

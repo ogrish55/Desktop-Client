@@ -23,5 +23,11 @@ namespace GUI.ControlLayer
             new ProductService().InsertProduct(product);
         }
 
+        public void DeleteProduct(int productId)
+        {
+            ProductService ps = new ProductService();
+
+            ps.DeleteProduct(productId);
+        }
     }
 }
