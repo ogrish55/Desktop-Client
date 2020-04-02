@@ -119,7 +119,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ProductServiceReference\GUI.ProductServiceReference.ServiceProduct2.datasource">
+    <None Include="Connected Services\ProductServiceReference\GUI.ProductServiceReference.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ProductServiceReference\Service.Model.xsd">
