@@ -63,6 +63,8 @@
     <Compile Include="PresentationLayer\UpdateProductGUI.xaml.cs">
       <DependentUpon>UpdateProductGUI.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\ConvertDataModel.cs" />
+    <Compile Include="Utilities\IConvertModel.cs" />
     <Page Include="PresentationLayer\AddProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,7 +119,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ProductServiceReference\GUI.ProductServiceReference.Product.datasource">
+    <None Include="Connected Services\ProductServiceReference\GUI.ProductServiceReference.ServiceProduct3.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ProductServiceReference\Service.Model.xsd">

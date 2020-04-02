@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace GUI.ModelLayer
 {
-    class Product
+    public class Product
     {
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public string Description { get; set; }
+        public int ProductId { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name} - {Price}";
+        }
     }
+
+
 }

@@ -46,5 +46,12 @@ namespace GUI
             deleteProductWindow.Show();
             this.Hide();
         }
+
+        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateProductGUI updateProductGUI = new UpdateProductGUI();
+            updateProductGUI.Show();
+            this.Hide();
+        }
     }
 }
