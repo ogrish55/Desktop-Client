@@ -24,6 +24,7 @@ namespace GUI.ServiceLayer
 
         public void InsertProduct(GUI.ProductServiceReference.Product product)
         {
+            
             using(ProductServiceClient productProxy = new ProductServiceClient())
             {
                 productProxy.InsertProduct(product);
