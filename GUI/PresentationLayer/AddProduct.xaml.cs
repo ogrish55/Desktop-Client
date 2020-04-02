@@ -1,4 +1,5 @@
 ﻿using GUI.ControlLayer;
+using GUI.ModelLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,7 @@ namespace GUI
         {
             if (CheckForInput())
             {
-                GUI.ProductServiceReference.Product product = new ProductServiceReference.Product
+                Product product = new Product
                 {
                     Name = NameTxt.Text,
                     Price = Convert.ToDecimal(PriceTxt.Text),

@@ -9,9 +9,9 @@ namespace GUI.ServiceLayer
 {
     public class ProductService
     {
-        public IEnumerable<GUI.ProductServiceReference.Product> GetAllProducts()
+        public IEnumerable<ServiceProduct> GetAllProducts()
         {
-            IEnumerable<GUI.ProductServiceReference.Product> proxyProducts = null;
+            IEnumerable<ServiceProduct> proxyProducts = null;
 
             using (ProductServiceClient productProxy = new ProductServiceClient())
             {
@@ -21,7 +21,7 @@ namespace GUI.ServiceLayer
             return proxyProducts;
         }
 
-        public void InsertProduct(GUI.ProductServiceReference.Product product)
+        public void InsertProduct(ServiceProduct product)
         {
             using(ProductServiceClient productProxy = new ProductServiceClient())
             {
