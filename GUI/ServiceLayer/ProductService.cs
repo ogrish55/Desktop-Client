@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GUI.ProductServiceReference;
 
 namespace GUI.ServiceLayer
 {
@@ -29,5 +28,6 @@ namespace GUI.ServiceLayer
                 productProxy.InsertProduct(product);
             }
         }
+
     }
 }
