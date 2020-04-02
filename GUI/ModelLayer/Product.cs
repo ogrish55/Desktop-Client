@@ -9,5 +9,6 @@ namespace GUI.ModelLayer
     class Product
     {
         //Herro
+        //Kommer
     }
 }
