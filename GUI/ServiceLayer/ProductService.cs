@@ -1,4 +1,5 @@
-﻿using GUI.ProductServiceReference;
+﻿using GUI.ModelLayer;
+using GUI.ProductServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,5 +39,12 @@ namespace GUI.ServiceLayer
             }
         }
 
+        public void UpdateProduct(ServiceProduct product)
+        {
+            using(ProductServiceClient productProxy = new ProductServiceClient())
+            {
+                productProxy.UpdateProduct(product);
+            }
+        }
     }
 }

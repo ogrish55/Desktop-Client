@@ -36,5 +36,10 @@ namespace GUI.ControlLayer
 
             ps.DeleteProduct(productId);
         }
+
+        public void UpdateProduct(Product product)
+        {
+            new ProductService().UpdateProduct(new ConvertDataModel().ConvertToServiceProduct(product));
+        }
     }
 }
