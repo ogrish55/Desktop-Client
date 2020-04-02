@@ -15,9 +15,9 @@ namespace GUI.ProductServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceProduct", Namespace="http://schemas.datacontract.org/2004/07/Service.Model")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="http://schemas.datacontract.org/2004/07/Service.Model")]
     [System.SerializableAttribute()]
-    public partial class ServiceProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -32,7 +32,7 @@ namespace GUI.ProductServiceReference {
         private decimal PriceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ProductIdField;
+        private int ProdutIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -84,14 +84,14 @@ namespace GUI.ProductServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ProductId {
+        public int ProdutId {
             get {
-                return this.ProductIdField;
+                return this.ProdutIdField;
             }
             set {
-                if ((this.ProductIdField.Equals(value) != true)) {
-                    this.ProductIdField = value;
-                    this.RaisePropertyChanged("ProductId");
+                if ((this.ProdutIdField.Equals(value) != true)) {
+                    this.ProdutIdField = value;
+                    this.RaisePropertyChanged("ProdutId");
                 }
             }
         }
@@ -111,10 +111,10 @@ namespace GUI.ProductServiceReference {
     public interface IProductService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/InsertProduct", ReplyAction="http://tempuri.org/IProductService/InsertProductResponse")]
-        void InsertProduct(GUI.ProductServiceReference.ServiceProduct product);
+        void InsertProduct(GUI.ProductServiceReference.Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/InsertProduct", ReplyAction="http://tempuri.org/IProductService/InsertProductResponse")]
-        System.Threading.Tasks.Task InsertProductAsync(GUI.ProductServiceReference.ServiceProduct product);
+        System.Threading.Tasks.Task InsertProductAsync(GUI.ProductServiceReference.Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteProduct", ReplyAction="http://tempuri.org/IProductService/DeleteProductResponse")]
         void DeleteProduct(int productId);
@@ -123,22 +123,22 @@ namespace GUI.ProductServiceReference {
         System.Threading.Tasks.Task DeleteProductAsync(int productId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProduct", ReplyAction="http://tempuri.org/IProductService/UpdateProductResponse")]
-        void UpdateProduct(GUI.ProductServiceReference.ServiceProduct product);
+        void UpdateProduct(GUI.ProductServiceReference.Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProduct", ReplyAction="http://tempuri.org/IProductService/UpdateProductResponse")]
-        System.Threading.Tasks.Task UpdateProductAsync(GUI.ProductServiceReference.ServiceProduct product);
+        System.Threading.Tasks.Task UpdateProductAsync(GUI.ProductServiceReference.Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductById", ReplyAction="http://tempuri.org/IProductService/GetProductByIdResponse")]
-        GUI.ProductServiceReference.ServiceProduct GetProductById(int productId);
+        GUI.ProductServiceReference.Product GetProductById(int productId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductById", ReplyAction="http://tempuri.org/IProductService/GetProductByIdResponse")]
-        System.Threading.Tasks.Task<GUI.ProductServiceReference.ServiceProduct> GetProductByIdAsync(int productId);
+        System.Threading.Tasks.Task<GUI.ProductServiceReference.Product> GetProductByIdAsync(int productId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllProducts", ReplyAction="http://tempuri.org/IProductService/GetAllProductsResponse")]
-        GUI.ProductServiceReference.ServiceProduct[] GetAllProducts();
+        GUI.ProductServiceReference.Product[] GetAllProducts();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllProducts", ReplyAction="http://tempuri.org/IProductService/GetAllProductsResponse")]
-        System.Threading.Tasks.Task<GUI.ProductServiceReference.ServiceProduct[]> GetAllProductsAsync();
+        System.Threading.Tasks.Task<GUI.ProductServiceReference.Product[]> GetAllProductsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -168,11 +168,11 @@ namespace GUI.ProductServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public void InsertProduct(GUI.ProductServiceReference.ServiceProduct product) {
+        public void InsertProduct(GUI.ProductServiceReference.Product product) {
             base.Channel.InsertProduct(product);
         }
         
-        public System.Threading.Tasks.Task InsertProductAsync(GUI.ProductServiceReference.ServiceProduct product) {
+        public System.Threading.Tasks.Task InsertProductAsync(GUI.ProductServiceReference.Product product) {
             return base.Channel.InsertProductAsync(product);
         }
         
@@ -184,27 +184,27 @@ namespace GUI.ProductServiceReference {
             return base.Channel.DeleteProductAsync(productId);
         }
         
-        public void UpdateProduct(GUI.ProductServiceReference.ServiceProduct product) {
+        public void UpdateProduct(GUI.ProductServiceReference.Product product) {
             base.Channel.UpdateProduct(product);
         }
         
-        public System.Threading.Tasks.Task UpdateProductAsync(GUI.ProductServiceReference.ServiceProduct product) {
+        public System.Threading.Tasks.Task UpdateProductAsync(GUI.ProductServiceReference.Product product) {
             return base.Channel.UpdateProductAsync(product);
         }
         
-        public GUI.ProductServiceReference.ServiceProduct GetProductById(int productId) {
+        public GUI.ProductServiceReference.Product GetProductById(int productId) {
             return base.Channel.GetProductById(productId);
         }
         
-        public System.Threading.Tasks.Task<GUI.ProductServiceReference.ServiceProduct> GetProductByIdAsync(int productId) {
+        public System.Threading.Tasks.Task<GUI.ProductServiceReference.Product> GetProductByIdAsync(int productId) {
             return base.Channel.GetProductByIdAsync(productId);
         }
         
-        public GUI.ProductServiceReference.ServiceProduct[] GetAllProducts() {
+        public GUI.ProductServiceReference.Product[] GetAllProducts() {
             return base.Channel.GetAllProducts();
         }
         
-        public System.Threading.Tasks.Task<GUI.ProductServiceReference.ServiceProduct[]> GetAllProductsAsync() {
+        public System.Threading.Tasks.Task<GUI.ProductServiceReference.Product[]> GetAllProductsAsync() {
             return base.Channel.GetAllProductsAsync();
         }
     }
