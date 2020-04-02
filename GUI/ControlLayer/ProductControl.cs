@@ -30,5 +30,11 @@ namespace GUI.ControlLayer
             new ProductService().InsertProduct(new ConvertDataModel().ConvertToServiceProduct(product));
         }
 
+        public void DeleteProduct(int productId)
+        {
+            ProductService ps = new ProductService();
+
+            ps.DeleteProduct(productId);
+        }
     }
 }

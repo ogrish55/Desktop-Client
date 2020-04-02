@@ -29,5 +29,13 @@ namespace GUI.ServiceLayer
             }
         }
 
+        public void DeleteProduct(int productId)
+        {
+            using (ProductServiceClient productProxy = new ProductServiceClient())
+            {
+                productProxy.DeleteProduct(productId);
+            }
+        }
+
     }
 }
