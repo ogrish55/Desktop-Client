@@ -1,4 +1,5 @@
 ﻿using GUI.ControlLayer;
+using GUI.ModelLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,7 +48,7 @@ namespace GUI.PresentationLayer
         {
             var allProducts = _productControl.GetAllProducts();
             listBoxProducts.Items.Clear();
-            foreach (GUI.ProductServiceReference.Product product in allProducts)
+            foreach (Product product in allProducts)
             {
                 listBoxProducts.Items.Add(product);
                 // mangler at printe toString metoden i listen
