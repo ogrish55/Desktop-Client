@@ -43,6 +43,8 @@ namespace GUI.ServiceLayer
         {
             using(ProductServiceClient productProxy = new ProductServiceClient())
             {
+                Console.WriteLine(product.Name);
+                Console.Read();
                 productProxy.UpdateProduct(product);
             }
         }
