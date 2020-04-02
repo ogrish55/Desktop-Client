@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using GUI.ControlLayer;
 
 
 namespace GUI
@@ -9,9 +10,12 @@ namespace GUI
     /// </summary>
     public partial class UpdateProductGUI : Window
     {
+        ProductControl _productControl;
         public UpdateProductGUI()
         {
             InitializeComponent();
+            _productControl = new ProductControl();
+            listProducts.ItemsSource = _productControl.GetAllProducts();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

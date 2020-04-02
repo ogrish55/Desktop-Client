@@ -41,11 +41,11 @@ namespace GUI.PresentationLayer
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
-            GUI.ProductServiceReference.Product selectedProduct;
-            selectedProduct = (GUI.ProductServiceReference.Product)listBoxProducts.SelectedItem;
+            Product selectedProduct;
+            selectedProduct = (Product)listBoxProducts.SelectedItem;
             if (selectedProduct != null)
             {
-                _productControl.DeleteProduct(selectedProduct.ProdutId);
+                _productControl.DeleteProduct(selectedProduct.ProductId);
                 UpdateListBoxProducts();
             }
         }
