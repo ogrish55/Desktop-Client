@@ -60,6 +60,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ModelLayer\Discount.cs" />
+    <Compile Include="ModelLayer\EnumPaymentMethods.cs" />
+    <Compile Include="ModelLayer\Order.cs" />
+    <Compile Include="ModelLayer\EnumOrderStatus.cs" />
     <Compile Include="PresentationLayer\CancelOrder.xaml.cs">
       <DependentUpon>CancelOrder.xaml</DependentUpon>
     </Compile>
