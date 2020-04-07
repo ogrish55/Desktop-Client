@@ -62,6 +62,14 @@ namespace GUI
             if(NameTxt.Text.Length > 0 && PriceTxt.Text.Length > 0 && DescriptionTxt.Text.Length > 0)
             {
                 success = true;
+                try
+                {
+                    Int32.Parse(PriceTxt.Text);
+                }
+                catch (FormatException)
+                {
+                    success = false;
+                }
             }
             return success;
         }

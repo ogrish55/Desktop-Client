@@ -1,11 +1,12 @@
 ﻿
 using GUI.ControlLayer;
+using GUI.ModelLayer;
 using GUI.ProductServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using GUI.ControlLayer;
+
 
 
 namespace GUI
