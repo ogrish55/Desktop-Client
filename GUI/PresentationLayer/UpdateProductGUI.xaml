@@ -15,7 +15,8 @@
         <ListBox Name="listProducts" HorizontalAlignment="Left" Height="365" Margin="315,10,0,0" VerticalAlignment="Top" Width="410" SelectionChanged="listProducts_SelectionChanged"/>
         <Label Name="lblDescription" Content="Description:" HorizontalAlignment="Left" Margin="30,142,0,0" VerticalAlignment="Top"/>
         <TextBox Name="txtDescription" HorizontalAlignment="Left" Height="197" Margin="39,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
-        <Button Name="btnDone" Content="Done" HorizontalAlignment="Left" Margin="650,384,0,0" VerticalAlignment="Top" Width="75" Click="btnDone_Click"/>
+        <Button Name="btnDone" Content="Update" HorizontalAlignment="Left" Margin="561,384,0,0" VerticalAlignment="Top" Width="75" Click="btnDone_Click"/>
+        <Button Name ="btnBack" Content="Back" HorizontalAlignment="Left" Margin="650,384,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
 
     </Grid>
 </Window>

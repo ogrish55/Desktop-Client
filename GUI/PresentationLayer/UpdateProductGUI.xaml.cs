@@ -1,12 +1,11 @@
 ﻿
 using GUI.ControlLayer;
-using GUI.ModelLayer;
 using GUI.ProductServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-
+using GUI.ModelLayer;
 
 
 namespace GUI
@@ -19,77 +18,64 @@ namespace GUI
         private ProductControl pctr;
         public UpdateProductGUI()
         {
-            this.pctr = new ProductControl();
+            pctr = new ProductControl();
             InitializeComponent();
-            FillList();
+            listProducts.ItemsSource = pctr.GetAllProducts();
         }
 
-        private void FillList()
+        private void Complain(Exception e, string message)
         {
-            listProducts.Items.Clear();
-            var allProducts = pctr.GetAllProducts();
-            foreach (Product p in allProducts)
-            {
-                listProducts.Items.Add(p);
-            }
-
-        }
-        private void Complain(Exception e)
-        {
-            MessageBox.Show("An error occured: " + e.Message);
+            MessageBox.Show(message + "Error message: " + e.Message);
         }
 
         private void listProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //When the Product model has been created, the calls below will be possible (.Name, .Description) etc.
-
-            //txtName.Text = listProducts.SelectedItem.Name;
-            //txtPrice.Text = listProducts.SelectedItem.Price;
-            //txtDescription.Text = listProducts.SelectedItem.Description;
-
+            Product p = (Product)listProducts.SelectedItem;
+            txtName.Text = p.Name;
+            txtPrice.Text = p.Price.ToString();
+            txtDescription.Text = p.Description;
         }
 
         private void btnDone_Click(object sender, RoutedEventArgs e)
         {
-
             string Name;
-            string Price;
+            decimal Price;
             string Description;
+
             try
             {
                 Name = txtName.Text;
-                Price = txtPrice.Text;
+                Price = decimal.Parse(txtPrice.Text);
                 Description = txtDescription.Text;
-                double DoublePrice = double.Parse(Price);
-                if (Name.Length > 0 && Description.Length > 0 && DoublePrice > 0)
-                {   //Line below also requires Product model.
-                    //int Id = listProducts.SelectedItem.Id;
-
-                    //Here needs to be the call: pctr.Update(Id, Name, Price, Description)
-
+ 
+                if (Name.Length > 0 && Description.Length > 0 && Price > 0)
+                {
+                    Product updatedProduct = (Product)listProducts.SelectedItem;
+                    updatedProduct.Name = Name;
+                    updatedProduct.Price = Price;
+                    updatedProduct.Description = Description;
                     
+                    pctr.UpdateProduct(updatedProduct);
+                    MessageBox.Show(updatedProduct.Name + " has been updated!", "Success", MessageBoxButton.OK,MessageBoxImage.Information);
                 }
             }
             catch (Exception ex)
             {
-                Complain(ex);
+                Complain(ex, "Try again. ");
             }
-
-            
-            
-
-
-
-
         }
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            listProducts.Items.Clear();
+            //Search function
             
-            
-            
-            
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Hide();
         }
     }
 }

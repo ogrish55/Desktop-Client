@@ -26,6 +26,7 @@ namespace GUI.Utilities
             producttoReturn.Description = desktopProduct.Description;
             producttoReturn.Name = desktopProduct.Name;
             producttoReturn.Price = desktopProduct.Price;
+            producttoReturn.ProductId = desktopProduct.ProductId;
             return producttoReturn;
         }
     }
