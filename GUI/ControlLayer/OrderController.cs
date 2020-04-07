@@ -52,5 +52,9 @@ namespace GUI.ControlLayer
             new OrderService().UpdateOrder(new ConvertDataModel().ConvertToServiceOrder(order));
         }
 
+        public Order GetOrder(int idToSearchFor)
+        {
+            return new ConvertDataModel().ConvertFromServiceOrder(new OrderService().GetOrder(idToSearchFor));
+        }
     }
 }

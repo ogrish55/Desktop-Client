@@ -27,6 +27,7 @@ namespace GUI.PresentationLayer
         {
             InitializeComponent();
             UpdateListBoxOrders();
+            LabelError.Visibility = Visibility.Hidden;
         }
 
         private void UpdateListBoxOrders()
@@ -65,6 +66,35 @@ namespace GUI.PresentationLayer
             {
                 MessageBox.Show("Please select an order from the list");
             }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int idToSearchFor = Int32.Parse(txtSearch.Text);
+                LabelError.Visibility = Visibility.Hidden;
+                listOrders.Items.Clear();
+                Order orderToPresent = new OrderController().GetOrder(idToSearchFor);
+                if(orderToPresent != null)
+                {
+                    listOrders.Items.Add(orderToPresent);
+                }
+                else
+                {
+                    MessageBox.Show("No order matching the given ID");
+                    UpdateListBoxOrders();
+                }
+            }
+            catch(FormatException)
+            {
+                LabelError.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void RadioButton_Checked(object sender, EventArgs e)
+        {
+            UpdateListBoxOrders();
         }
     }
 }
