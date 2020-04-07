@@ -53,5 +53,12 @@ namespace GUI
             updateProductGUI.Show();
             this.Hide();
         }
+
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CancelOrder cancelOrderGUI = new CancelOrder();
+            cancelOrderGUI.Show();
+            this.Hide();
+        }
     }
 }

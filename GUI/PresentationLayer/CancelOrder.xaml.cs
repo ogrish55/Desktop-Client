@@ -23,5 +23,11 @@ namespace GUI.PresentationLayer
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            new MainWindow().Show();
+            this.Hide();
+        }
     }
 }
