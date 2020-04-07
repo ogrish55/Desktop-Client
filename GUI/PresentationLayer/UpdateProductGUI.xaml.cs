@@ -1,5 +1,4 @@
-﻿
-using GUI.ControlLayer;
+﻿using GUI.ControlLayer;
 using GUI.ProductServiceReference;
 using System;
 using System.Collections.Generic;
