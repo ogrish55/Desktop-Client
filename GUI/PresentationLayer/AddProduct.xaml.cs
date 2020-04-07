@@ -64,7 +64,7 @@ namespace GUI
                 success = true;
                 try
                 {
-                    Int32.Parse(PriceTxt.Text);
+                    Decimal.Parse(PriceTxt.Text);
                 }
                 catch (FormatException)
                 {
