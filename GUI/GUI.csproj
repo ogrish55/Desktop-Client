@@ -60,6 +60,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ControlLayer\OrderController.cs" />
     <Compile Include="ModelLayer\Discount.cs" />
     <Compile Include="ModelLayer\EnumPaymentMethods.cs" />
     <Compile Include="ModelLayer\Order.cs" />
