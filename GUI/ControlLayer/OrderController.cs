@@ -8,7 +8,7 @@ using GUI.Utilities;
 
 namespace GUI.ControlLayer
 {
-    class OrderController
+    public class OrderController
     {
         public enum EnumStatus{
             All,
@@ -51,5 +51,6 @@ namespace GUI.ControlLayer
         {
             new OrderService().UpdateOrder(new ConvertDataModel().ConvertToServiceOrder(order));
         }
+
     }
 }

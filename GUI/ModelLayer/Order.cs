@@ -19,6 +19,8 @@ namespace GUI.ModelLayer
 
         public EnumPaymentMethods PaymentMethod { get; set; }
 
+        public int CustomerId { get; set; }
+
         public Order()
         {
             Date = DateTime.Now;

@@ -74,6 +74,7 @@
     <Compile Include="PresentationLayer\UpdateProductGUI.xaml.cs">
       <DependentUpon>UpdateProductGUI.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ServiceLayer\OrderService.cs" />
     <Compile Include="Utilities\ConvertDataModel.cs" />
     <Compile Include="Utilities\IConvertModel.cs" />
     <Page Include="PresentationLayer\AddProduct.xaml">
