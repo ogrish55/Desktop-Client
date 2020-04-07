@@ -11,7 +11,6 @@
         <TextBox Name="txtSearch" HorizontalAlignment="Left" Height="20" Margin="300,505,0,0" TextWrapping="Wrap" Text="Search.." VerticalAlignment="Top" Width="81"/>
         <Button Name="btnCancel" Content="Cancel Order" HorizontalAlignment="Left" Margin="480,510,0,0" VerticalAlignment="Top" Width="100" Click="btnCancel_Click"/>
         <Button Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="700,540,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
-        <GroupBox Header="GroupBox" HorizontalAlignment="Left" Height="56" Margin="76,187,0,0" VerticalAlignment="Top" Width="182"/>
         <RadioButton GroupName="Sorter" Name="radioCancel" Content="Canceled Orders" HorizontalAlignment="Left" Margin="480,20,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
         <RadioButton GroupName="Sorter" Name="radioAll" Content="All Orders" HorizontalAlignment="Left" Margin="300,20,0,0" VerticalAlignment="Top" IsChecked="True" Checked="RadioButton_Checked"/>
         <RadioButton GroupName="Sorter" Name="radioActive" Content="Active Orders" HorizontalAlignment="Left" Margin="670,20,0,0" VerticalAlignment="Top" Checked="RadioButton_Checked"/>
