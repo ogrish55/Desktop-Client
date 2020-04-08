@@ -150,6 +150,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Connected Services\CustomerOrderServiceReference\GUI.CustomerOrderServiceReference.ServiceCustomerOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\CustomerOrderServiceReference\Service.Model.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -11,4 +11,10 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ServiceCustomerOrder" nillable="true" type="tns:ServiceCustomerOrder" />
+  <xs:complexType name="ArrayOfServiceCustomerOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceCustomerOrder" nillable="true" type="tns:ServiceCustomerOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceCustomerOrder" nillable="true" type="tns:ArrayOfServiceCustomerOrder" />
 </xs:schema>

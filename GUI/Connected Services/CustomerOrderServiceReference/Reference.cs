@@ -159,6 +159,30 @@ namespace GUI.CustomerOrderServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/UpdateOrder", ReplyAction="http://tempuri.org/ICustomerOrderService/UpdateOrderResponse")]
         System.Threading.Tasks.Task UpdateOrderAsync(GUI.CustomerOrderServiceReference.ServiceCustomerOrder order);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetAllOrders", ReplyAction="http://tempuri.org/ICustomerOrderService/GetAllOrdersResponse")]
+        GUI.CustomerOrderServiceReference.ServiceCustomerOrder[] GetAllOrders();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetAllOrders", ReplyAction="http://tempuri.org/ICustomerOrderService/GetAllOrdersResponse")]
+        System.Threading.Tasks.Task<GUI.CustomerOrderServiceReference.ServiceCustomerOrder[]> GetAllOrdersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetCancelledOrders", ReplyAction="http://tempuri.org/ICustomerOrderService/GetCancelledOrdersResponse")]
+        GUI.CustomerOrderServiceReference.ServiceCustomerOrder[] GetCancelledOrders();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetCancelledOrders", ReplyAction="http://tempuri.org/ICustomerOrderService/GetCancelledOrdersResponse")]
+        System.Threading.Tasks.Task<GUI.CustomerOrderServiceReference.ServiceCustomerOrder[]> GetCancelledOrdersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetActiveOrders", ReplyAction="http://tempuri.org/ICustomerOrderService/GetActiveOrdersResponse")]
+        GUI.CustomerOrderServiceReference.ServiceCustomerOrder[] GetActiveOrders();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetActiveOrders", ReplyAction="http://tempuri.org/ICustomerOrderService/GetActiveOrdersResponse")]
+        System.Threading.Tasks.Task<GUI.CustomerOrderServiceReference.ServiceCustomerOrder[]> GetActiveOrdersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetOrder", ReplyAction="http://tempuri.org/ICustomerOrderService/GetOrderResponse")]
+        GUI.CustomerOrderServiceReference.ServiceCustomerOrder GetOrder(int customerOrderId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetOrder", ReplyAction="http://tempuri.org/ICustomerOrderService/GetOrderResponse")]
+        System.Threading.Tasks.Task<GUI.CustomerOrderServiceReference.ServiceCustomerOrder> GetOrderAsync(int customerOrderId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -210,6 +234,38 @@ namespace GUI.CustomerOrderServiceReference {
         
         public System.Threading.Tasks.Task UpdateOrderAsync(GUI.CustomerOrderServiceReference.ServiceCustomerOrder order) {
             return base.Channel.UpdateOrderAsync(order);
+        }
+        
+        public GUI.CustomerOrderServiceReference.ServiceCustomerOrder[] GetAllOrders() {
+            return base.Channel.GetAllOrders();
+        }
+        
+        public System.Threading.Tasks.Task<GUI.CustomerOrderServiceReference.ServiceCustomerOrder[]> GetAllOrdersAsync() {
+            return base.Channel.GetAllOrdersAsync();
+        }
+        
+        public GUI.CustomerOrderServiceReference.ServiceCustomerOrder[] GetCancelledOrders() {
+            return base.Channel.GetCancelledOrders();
+        }
+        
+        public System.Threading.Tasks.Task<GUI.CustomerOrderServiceReference.ServiceCustomerOrder[]> GetCancelledOrdersAsync() {
+            return base.Channel.GetCancelledOrdersAsync();
+        }
+        
+        public GUI.CustomerOrderServiceReference.ServiceCustomerOrder[] GetActiveOrders() {
+            return base.Channel.GetActiveOrders();
+        }
+        
+        public System.Threading.Tasks.Task<GUI.CustomerOrderServiceReference.ServiceCustomerOrder[]> GetActiveOrdersAsync() {
+            return base.Channel.GetActiveOrdersAsync();
+        }
+        
+        public GUI.CustomerOrderServiceReference.ServiceCustomerOrder GetOrder(int customerOrderId) {
+            return base.Channel.GetOrder(customerOrderId);
+        }
+        
+        public System.Threading.Tasks.Task<GUI.CustomerOrderServiceReference.ServiceCustomerOrder> GetOrderAsync(int customerOrderId) {
+            return base.Channel.GetOrderAsync(customerOrderId);
         }
     }
 }

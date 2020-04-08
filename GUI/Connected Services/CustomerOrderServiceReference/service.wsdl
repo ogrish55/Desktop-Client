@@ -25,6 +25,30 @@
   <wsdl:message name="ICustomerOrderService_UpdateOrder_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateOrderResponse" />
   </wsdl:message>
+  <wsdl:message name="ICustomerOrderService_GetAllOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrders" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerOrderService_GetAllOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerOrderService_GetCancelledOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCancelledOrders" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerOrderService_GetCancelledOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCancelledOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerOrderService_GetActiveOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveOrders" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerOrderService_GetActiveOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetActiveOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerOrderService_GetOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrder" />
+  </wsdl:message>
+  <wsdl:message name="ICustomerOrderService_GetOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICustomerOrderService">
     <wsdl:operation name="DeleteOrder">
       <wsdl:input wsaw:Action="http://tempuri.org/ICustomerOrderService/DeleteOrder" message="tns:ICustomerOrderService_DeleteOrder_InputMessage" />
@@ -37,6 +61,22 @@
     <wsdl:operation name="UpdateOrder">
       <wsdl:input wsaw:Action="http://tempuri.org/ICustomerOrderService/UpdateOrder" message="tns:ICustomerOrderService_UpdateOrder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICustomerOrderService/UpdateOrderResponse" message="tns:ICustomerOrderService_UpdateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerOrderService/GetAllOrders" message="tns:ICustomerOrderService_GetAllOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerOrderService/GetAllOrdersResponse" message="tns:ICustomerOrderService_GetAllOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCancelledOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerOrderService/GetCancelledOrders" message="tns:ICustomerOrderService_GetCancelledOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerOrderService/GetCancelledOrdersResponse" message="tns:ICustomerOrderService_GetCancelledOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerOrderService/GetActiveOrders" message="tns:ICustomerOrderService_GetActiveOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerOrderService/GetActiveOrdersResponse" message="tns:ICustomerOrderService_GetActiveOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICustomerOrderService/GetOrder" message="tns:ICustomerOrderService_GetOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICustomerOrderService/GetOrderResponse" message="tns:ICustomerOrderService_GetOrder_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICustomerOrderService" type="tns:ICustomerOrderService">
@@ -61,6 +101,42 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateOrder">
       <soap:operation soapAction="http://tempuri.org/ICustomerOrderService/UpdateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOrders">
+      <soap:operation soapAction="http://tempuri.org/ICustomerOrderService/GetAllOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCancelledOrders">
+      <soap:operation soapAction="http://tempuri.org/ICustomerOrderService/GetCancelledOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveOrders">
+      <soap:operation soapAction="http://tempuri.org/ICustomerOrderService/GetActiveOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrder">
+      <soap:operation soapAction="http://tempuri.org/ICustomerOrderService/GetOrder" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

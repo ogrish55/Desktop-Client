@@ -39,5 +39,13 @@ namespace GUI.ServiceLayer
                 return orderProxy.GetActiveOrders();
             }
         }
+
+        public ServiceCustomerOrder GetOrder(int id)
+        {
+            using(CustomerOrderServiceClient orderProxy = new CustomerOrderServiceClient())
+            {
+                return orderProxy.GetOrder(id);
+            }
+        }
     }
 }

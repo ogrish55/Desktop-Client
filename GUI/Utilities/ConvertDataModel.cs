@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GUI.CustomerOrderServiceReference;
+using GUI.ModelLayer;
 using GUI.ProductServiceReference;
 
 namespace GUI.Utilities
@@ -28,6 +30,19 @@ namespace GUI.Utilities
             producttoReturn.Price = desktopProduct.Price;
             producttoReturn.ProductId = desktopProduct.ProductId;
             return producttoReturn;
+        }
+
+        public Order ConvertFromServiceOrder(ServiceCustomerOrder item)
+        {
+            Order orderToReturn = new Order();
+            orderToReturn.Date = item.DateOrder;
+            orderToReturn.Status = (EnumOrderStatus)Enum.Parse(typeof(EnumOrderStatus), item.Status);
+            return orderToReturn;
+        }
+
+        internal ServiceCustomerOrder ConvertToServiceOrder(Order order)
+        {
+            throw new NotImplementedException();
         }
     }
 }
