@@ -67,6 +67,7 @@ namespace GUI.PresentationLayer
             {
                 currentOrder.Status = EnumOrderStatus.Cancelled;
                 new OrderController().CancelOrder(currentOrder);
+                UpdateListBoxOrders();
             }
             else
             {
