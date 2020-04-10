@@ -26,5 +26,10 @@ namespace GUI.ModelLayer
             Date = DateTime.Now;
             Status = EnumOrderStatus.Active;
         }
+
+        public override string ToString()
+        {
+            return $"OrderId: {OrderId} - Status: {Status.ToString()}";
+        }
     }
 }

@@ -35,10 +35,16 @@ namespace GUI.Utilities
 
         public Order ConvertFromServiceOrder(ServiceCustomerOrder item)
         {
-            Order orderToReturn = new Order();
-            orderToReturn.Date = item.DateOrder;
-            if(item.Status != null) {
-                orderToReturn.Status = (EnumOrderStatus)Enum.Parse(typeof(EnumOrderStatus), item.Status);
+            Order orderToReturn = null;
+            if(item != null)
+            {
+                orderToReturn = new Order();
+                orderToReturn.Date = item.DateOrder;
+                if (item.Status != null)
+                {
+                    orderToReturn.Status = (EnumOrderStatus)Enum.Parse(typeof(EnumOrderStatus), item.Status);
+                }
+
             }
             return orderToReturn;
         }
