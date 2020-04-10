@@ -6,7 +6,8 @@
       <xs:element minOccurs="0" name="DateOrder" type="xs:dateTime" />
       <xs:element minOccurs="0" name="DiscountId" type="xs:int" />
       <xs:element minOccurs="0" name="FinalPrice" type="xs:decimal" />
-      <xs:element minOccurs="0" name="PaymentMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderId" type="xs:int" />
+      <xs:element minOccurs="0" name="PaymentMethod" type="xs:int" />
       <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

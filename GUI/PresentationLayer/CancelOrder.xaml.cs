@@ -34,16 +34,22 @@ namespace GUI.PresentationLayer
         {
             if(radioAll.IsChecked == true)
             {
+                listOrders.ItemsSource = null;
+                listOrders.Items.Clear();
                 listOrders.ItemsSource =_orderController.GetOrders(OrderController.EnumStatus.All);
             }
 
             else if(radioActive.IsChecked == true)
             {
+                listOrders.ItemsSource = null;
+                listOrders.Items.Clear();
                 listOrders.ItemsSource = _orderController.GetOrders(OrderController.EnumStatus.Active);
             }
 
             else if (radioCancel.IsChecked == true)
             {
+                listOrders.ItemsSource = null;
+                listOrders.Items.Clear();
                 listOrders.ItemsSource = _orderController.GetOrders(OrderController.EnumStatus.Cancelled);
             }
         }
@@ -68,16 +74,16 @@ namespace GUI.PresentationLayer
             }
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                int idToSearchFor = Int32.Parse(txtSearch.Text);
+                int idToSearchFor = Int32.Parse(TxtSearch.Text);
                 LabelError.Visibility = Visibility.Hidden;
-                listOrders.Items.Clear();
                 Order orderToPresent = new OrderController().GetOrder(idToSearchFor);
                 if(orderToPresent != null)
                 {
+                    listOrders.ItemsSource = null;
                     listOrders.Items.Add(orderToPresent);
                 }
                 else

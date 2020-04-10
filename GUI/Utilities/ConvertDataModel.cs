@@ -37,7 +37,9 @@ namespace GUI.Utilities
         {
             Order orderToReturn = new Order();
             orderToReturn.Date = item.DateOrder;
-            orderToReturn.Status = (EnumOrderStatus)Enum.Parse(typeof(EnumOrderStatus), item.Status);
+            if(item.Status != null) {
+                orderToReturn.Status = (EnumOrderStatus)Enum.Parse(typeof(EnumOrderStatus), item.Status);
+            }
             return orderToReturn;
         }
 

@@ -35,7 +35,10 @@ namespace GUI.CustomerOrderServiceReference {
         private decimal FinalPriceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string PaymentMethodField;
+        private int OrderIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PaymentMethodField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string StatusField;
@@ -103,12 +106,25 @@ namespace GUI.CustomerOrderServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string PaymentMethod {
+        public int OrderId {
+            get {
+                return this.OrderIdField;
+            }
+            set {
+                if ((this.OrderIdField.Equals(value) != true)) {
+                    this.OrderIdField = value;
+                    this.RaisePropertyChanged("OrderId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaymentMethod {
             get {
                 return this.PaymentMethodField;
             }
             set {
-                if ((object.ReferenceEquals(this.PaymentMethodField, value) != true)) {
+                if ((this.PaymentMethodField.Equals(value) != true)) {
                     this.PaymentMethodField = value;
                     this.RaisePropertyChanged("PaymentMethod");
                 }
