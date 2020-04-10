@@ -55,7 +55,9 @@ namespace GUI
                     updatedProduct.Description = Description;
                     
                     pctr.UpdateProduct(updatedProduct);
-                    MessageBox.Show(updatedProduct.Name + " has been updated!", "Success", MessageBoxButton.OK,MessageBoxImage.Information);
+                    MessageBox.Show(updatedProduct.Name + " has been updated!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+                    listProducts.Items.Refresh();
+                    
                 }
             }
             catch (Exception ex)

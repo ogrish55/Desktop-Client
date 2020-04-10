@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI.ControlLayer;
+using GUI.ModelLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,15 +21,86 @@ namespace GUI.PresentationLayer
     /// </summary>
     public partial class CancelOrder : Window
     {
+        OrderController _orderController = new OrderController();
+
         public CancelOrder()
         {
             InitializeComponent();
+            UpdateListBoxOrders();
+            LabelError.Visibility = Visibility.Hidden;
+        }
+
+        private void UpdateListBoxOrders()
+        {
+            if(radioAll.IsChecked == true)
+            {
+                listOrders.ItemsSource = null;
+                listOrders.Items.Clear();
+                listOrders.ItemsSource =_orderController.GetOrders(OrderController.EnumStatus.All);
+            }
+
+            else if(radioActive.IsChecked == true)
+            {
+                listOrders.ItemsSource = null;
+                listOrders.Items.Clear();
+                listOrders.ItemsSource = _orderController.GetOrders(OrderController.EnumStatus.Active);
+            }
+
+            else if (radioCancel.IsChecked == true)
+            {
+                listOrders.ItemsSource = null;
+                listOrders.Items.Clear();
+                listOrders.ItemsSource = _orderController.GetOrders(OrderController.EnumStatus.Cancelled);
+            }
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             new MainWindow().Show();
             this.Hide();
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Order currentOrder = (Order)listOrders.SelectedItem;
+            if(currentOrder != null)
+            {
+                currentOrder.Status = EnumOrderStatus.Cancelled;
+                new OrderController().CancelOrder(currentOrder);
+            }
+            else
+            {
+                MessageBox.Show("Please select an order from the list");
+            }
+        }
+
+        private void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int idToSearchFor = Int32.Parse(TxtSearch.Text);
+                LabelError.Visibility = Visibility.Hidden;
+                Order orderToPresent = new OrderController().GetOrder(idToSearchFor);
+                if(orderToPresent != null)
+                {
+                    listOrders.ItemsSource = null;
+                    listOrders.Items.Add(orderToPresent);
+                }
+                else
+                {
+                    MessageBox.Show("No order matching the given ID");
+                    UpdateListBoxOrders();
+                }
+            }
+            catch(FormatException)
+            {
+                LabelError.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void RadioButton_Checked(object sender, EventArgs e)
+        {
+            UpdateListBoxOrders();
         }
     }
 }

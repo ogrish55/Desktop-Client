@@ -44,7 +44,8 @@ namespace GUI
                 {
                     Name = NameTxt.Text,
                     Price = Convert.ToDecimal(PriceTxt.Text),
-                    Description = DescriptionTxt.Text
+                    Description = DescriptionTxt.Text,
+                    AmountOnStock = Convert.ToInt32(AmountOnStockTxt.Text)
                 };
                 productControl.AddProduct(product);
                 MessageBox.Show(product.Name + " Successfully added to database");
@@ -59,12 +60,13 @@ namespace GUI
         private bool CheckForInput()
         {
             bool success = false;
-            if(NameTxt.Text.Length > 0 && PriceTxt.Text.Length > 0 && DescriptionTxt.Text.Length > 0)
+            if(NameTxt.Text.Length > 0 && PriceTxt.Text.Length > 0 && DescriptionTxt.Text.Length > 0 && AmountOnStockTxt.Text.Length > 0) 
             {
                 success = true;
                 try
                 {
                     Decimal.Parse(PriceTxt.Text);
+                    Int32.Parse(AmountOnStockTxt.Text);
                 }
                 catch (FormatException)
                 {
