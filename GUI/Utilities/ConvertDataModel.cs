@@ -40,6 +40,7 @@ namespace GUI.Utilities
             {
                 orderToReturn = new Order();
                 orderToReturn.Date = item.DateOrder;
+                orderToReturn.OrderId = item.OrderId;
                 if (item.Status != null)
                 {
                     orderToReturn.Status = (EnumOrderStatus)Enum.Parse(typeof(EnumOrderStatus), item.Status);
@@ -49,9 +50,12 @@ namespace GUI.Utilities
             return orderToReturn;
         }
 
-        internal ServiceCustomerOrder ConvertToServiceOrder(Order order)
+        public ServiceCustomerOrder ConvertToServiceOrder(Order order)
         {
-            throw new NotImplementedException();
+            ServiceCustomerOrder orderToReturn = new ServiceCustomerOrder();
+            orderToReturn.OrderId = order.OrderId;
+            orderToReturn.Status = order.Status.ToString();
+            return orderToReturn;
         }
     }
 }
