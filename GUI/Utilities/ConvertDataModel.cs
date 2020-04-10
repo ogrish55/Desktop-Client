@@ -11,9 +11,9 @@ namespace GUI.Utilities
 {
     public class ConvertDataModel : IConvertModel
     {
-        public ModelLayer.Product ConvertFromServiceProduct(ServiceProduct serviceProduct)
+        public Product ConvertFromServiceProduct(ServiceProduct serviceProduct)
         {
-            GUI.ModelLayer.Product productToReturn = new ModelLayer.Product();
+            Product productToReturn = new Product();
             productToReturn.Name = serviceProduct.Name;
             productToReturn.Price = serviceProduct.Price;
             productToReturn.Description = serviceProduct.Description;
@@ -22,13 +22,14 @@ namespace GUI.Utilities
             return productToReturn;
         }
 
-        public ServiceProduct ConvertToServiceProduct(ModelLayer.Product desktopProduct)
+        public ServiceProduct ConvertToServiceProduct(Product desktopProduct)
         {
             ServiceProduct producttoReturn = new ServiceProduct();
             producttoReturn.Description = desktopProduct.Description;
             producttoReturn.Name = desktopProduct.Name;
             producttoReturn.Price = desktopProduct.Price;
             producttoReturn.ProductId = desktopProduct.ProductId;
+            producttoReturn.AmountOnStock = desktopProduct.AmountOnStock;
             return producttoReturn;
         }
 

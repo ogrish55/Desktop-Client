@@ -15,5 +15,7 @@
         <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="101,25,0,0" Name="NameTxt"/>
         <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="101,55,0,0" Name="PriceTxt"/>
         <TextBox HorizontalAlignment="Left" Height="216" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="450" Margin="101,85,0,0" Name="DescriptionTxt"/>
+        <Label Content="Amount On Stock" HorizontalAlignment="Left" Margin="238,25,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="347,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="AmountOnStockTxt"/>
     </Grid>
 </Window>
