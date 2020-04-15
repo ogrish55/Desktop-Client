@@ -18,4 +18,23 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfServiceCustomerOrder" nillable="true" type="tns:ArrayOfServiceCustomerOrder" />
+  <xs:complexType name="ServiceDeliveryDescription">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
+      <xs:element minOccurs="0" name="DeliveryId" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceDeliveryDescription" nillable="true" type="tns:ServiceDeliveryDescription" />
+  <xs:complexType name="ServiceDiscount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DiscountAmount" type="xs:int" />
+      <xs:element minOccurs="0" name="DiscountCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiscountId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceDiscount" nillable="true" type="tns:ServiceDiscount" />
 </xs:schema>
