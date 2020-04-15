@@ -154,6 +154,208 @@ namespace GUI.CustomerOrderServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceDeliveryDescription", Namespace="http://schemas.datacontract.org/2004/07/Service.Model")]
+    [System.SerializableAttribute()]
+    public partial class ServiceDeliveryDescription : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CustomerIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DeliveryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PhoneNoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ZipCodeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CustomerId {
+            get {
+                return this.CustomerIdField;
+            }
+            set {
+                if ((this.CustomerIdField.Equals(value) != true)) {
+                    this.CustomerIdField = value;
+                    this.RaisePropertyChanged("CustomerId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DeliveryId {
+            get {
+                return this.DeliveryIdField;
+            }
+            set {
+                if ((this.DeliveryIdField.Equals(value) != true)) {
+                    this.DeliveryIdField = value;
+                    this.RaisePropertyChanged("DeliveryId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PhoneNo {
+            get {
+                return this.PhoneNoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PhoneNoField, value) != true)) {
+                    this.PhoneNoField = value;
+                    this.RaisePropertyChanged("PhoneNo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ZipCode {
+            get {
+                return this.ZipCodeField;
+            }
+            set {
+                if ((this.ZipCodeField.Equals(value) != true)) {
+                    this.ZipCodeField = value;
+                    this.RaisePropertyChanged("ZipCode");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceDiscount", Namespace="http://schemas.datacontract.org/2004/07/Service.Model")]
+    [System.SerializableAttribute()]
+    public partial class ServiceDiscount : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DiscountAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DiscountCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DiscountIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DiscountAmount {
+            get {
+                return this.DiscountAmountField;
+            }
+            set {
+                if ((this.DiscountAmountField.Equals(value) != true)) {
+                    this.DiscountAmountField = value;
+                    this.RaisePropertyChanged("DiscountAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DiscountCode {
+            get {
+                return this.DiscountCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DiscountCodeField, value) != true)) {
+                    this.DiscountCodeField = value;
+                    this.RaisePropertyChanged("DiscountCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DiscountId {
+            get {
+                return this.DiscountIdField;
+            }
+            set {
+                if ((this.DiscountIdField.Equals(value) != true)) {
+                    this.DiscountIdField = value;
+                    this.RaisePropertyChanged("DiscountId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CustomerOrderServiceReference.ICustomerOrderService")]
     public interface ICustomerOrderService {
@@ -199,6 +401,48 @@ namespace GUI.CustomerOrderServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetOrder", ReplyAction="http://tempuri.org/ICustomerOrderService/GetOrderResponse")]
         System.Threading.Tasks.Task<GUI.CustomerOrderServiceReference.ServiceCustomerOrder> GetOrderAsync(int customerOrderId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/InsertDeliveryDescription", ReplyAction="http://tempuri.org/ICustomerOrderService/InsertDeliveryDescriptionResponse")]
+        void InsertDeliveryDescription(GUI.CustomerOrderServiceReference.ServiceDeliveryDescription deliveryDescription);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/InsertDeliveryDescription", ReplyAction="http://tempuri.org/ICustomerOrderService/InsertDeliveryDescriptionResponse")]
+        System.Threading.Tasks.Task InsertDeliveryDescriptionAsync(GUI.CustomerOrderServiceReference.ServiceDeliveryDescription deliveryDescription);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetDeliveryDescriptionById", ReplyAction="http://tempuri.org/ICustomerOrderService/GetDeliveryDescriptionByIdResponse")]
+        GUI.CustomerOrderServiceReference.ServiceDeliveryDescription GetDeliveryDescriptionById(int deliveryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetDeliveryDescriptionById", ReplyAction="http://tempuri.org/ICustomerOrderService/GetDeliveryDescriptionByIdResponse")]
+        System.Threading.Tasks.Task<GUI.CustomerOrderServiceReference.ServiceDeliveryDescription> GetDeliveryDescriptionByIdAsync(int deliveryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/UpdateDeliveryDescription", ReplyAction="http://tempuri.org/ICustomerOrderService/UpdateDeliveryDescriptionResponse")]
+        void UpdateDeliveryDescription(GUI.CustomerOrderServiceReference.ServiceDeliveryDescription deliveryDescription);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/UpdateDeliveryDescription", ReplyAction="http://tempuri.org/ICustomerOrderService/UpdateDeliveryDescriptionResponse")]
+        System.Threading.Tasks.Task UpdateDeliveryDescriptionAsync(GUI.CustomerOrderServiceReference.ServiceDeliveryDescription deliveryDescription);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/DeleteDeliveryDescription", ReplyAction="http://tempuri.org/ICustomerOrderService/DeleteDeliveryDescriptionResponse")]
+        void DeleteDeliveryDescription(int deliveryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/DeleteDeliveryDescription", ReplyAction="http://tempuri.org/ICustomerOrderService/DeleteDeliveryDescriptionResponse")]
+        System.Threading.Tasks.Task DeleteDeliveryDescriptionAsync(int deliveryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/InsertDiscount", ReplyAction="http://tempuri.org/ICustomerOrderService/InsertDiscountResponse")]
+        void InsertDiscount(GUI.CustomerOrderServiceReference.ServiceDiscount discount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/InsertDiscount", ReplyAction="http://tempuri.org/ICustomerOrderService/InsertDiscountResponse")]
+        System.Threading.Tasks.Task InsertDiscountAsync(GUI.CustomerOrderServiceReference.ServiceDiscount discount);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/DeleteDiscount", ReplyAction="http://tempuri.org/ICustomerOrderService/DeleteDiscountResponse")]
+        int DeleteDiscount(int discountId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/DeleteDiscount", ReplyAction="http://tempuri.org/ICustomerOrderService/DeleteDiscountResponse")]
+        System.Threading.Tasks.Task<int> DeleteDiscountAsync(int discountId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetDiscountByCode", ReplyAction="http://tempuri.org/ICustomerOrderService/GetDiscountByCodeResponse")]
+        int GetDiscountByCode(string code);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetDiscountByCode", ReplyAction="http://tempuri.org/ICustomerOrderService/GetDiscountByCodeResponse")]
+        System.Threading.Tasks.Task<int> GetDiscountByCodeAsync(string code);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -282,6 +526,62 @@ namespace GUI.CustomerOrderServiceReference {
         
         public System.Threading.Tasks.Task<GUI.CustomerOrderServiceReference.ServiceCustomerOrder> GetOrderAsync(int customerOrderId) {
             return base.Channel.GetOrderAsync(customerOrderId);
+        }
+        
+        public void InsertDeliveryDescription(GUI.CustomerOrderServiceReference.ServiceDeliveryDescription deliveryDescription) {
+            base.Channel.InsertDeliveryDescription(deliveryDescription);
+        }
+        
+        public System.Threading.Tasks.Task InsertDeliveryDescriptionAsync(GUI.CustomerOrderServiceReference.ServiceDeliveryDescription deliveryDescription) {
+            return base.Channel.InsertDeliveryDescriptionAsync(deliveryDescription);
+        }
+        
+        public GUI.CustomerOrderServiceReference.ServiceDeliveryDescription GetDeliveryDescriptionById(int deliveryId) {
+            return base.Channel.GetDeliveryDescriptionById(deliveryId);
+        }
+        
+        public System.Threading.Tasks.Task<GUI.CustomerOrderServiceReference.ServiceDeliveryDescription> GetDeliveryDescriptionByIdAsync(int deliveryId) {
+            return base.Channel.GetDeliveryDescriptionByIdAsync(deliveryId);
+        }
+        
+        public void UpdateDeliveryDescription(GUI.CustomerOrderServiceReference.ServiceDeliveryDescription deliveryDescription) {
+            base.Channel.UpdateDeliveryDescription(deliveryDescription);
+        }
+        
+        public System.Threading.Tasks.Task UpdateDeliveryDescriptionAsync(GUI.CustomerOrderServiceReference.ServiceDeliveryDescription deliveryDescription) {
+            return base.Channel.UpdateDeliveryDescriptionAsync(deliveryDescription);
+        }
+        
+        public void DeleteDeliveryDescription(int deliveryId) {
+            base.Channel.DeleteDeliveryDescription(deliveryId);
+        }
+        
+        public System.Threading.Tasks.Task DeleteDeliveryDescriptionAsync(int deliveryId) {
+            return base.Channel.DeleteDeliveryDescriptionAsync(deliveryId);
+        }
+        
+        public void InsertDiscount(GUI.CustomerOrderServiceReference.ServiceDiscount discount) {
+            base.Channel.InsertDiscount(discount);
+        }
+        
+        public System.Threading.Tasks.Task InsertDiscountAsync(GUI.CustomerOrderServiceReference.ServiceDiscount discount) {
+            return base.Channel.InsertDiscountAsync(discount);
+        }
+        
+        public int DeleteDiscount(int discountId) {
+            return base.Channel.DeleteDiscount(discountId);
+        }
+        
+        public System.Threading.Tasks.Task<int> DeleteDiscountAsync(int discountId) {
+            return base.Channel.DeleteDiscountAsync(discountId);
+        }
+        
+        public int GetDiscountByCode(string code) {
+            return base.Channel.GetDiscountByCode(code);
+        }
+        
+        public System.Threading.Tasks.Task<int> GetDiscountByCodeAsync(string code) {
+            return base.Channel.GetDiscountByCodeAsync(code);
         }
     }
 }
