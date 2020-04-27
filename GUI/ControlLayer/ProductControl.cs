@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GUI.ServiceLayer;
-using GUI.ProductLineServiceReferencee;
+using GUI.CustomerOrderServiceReference;
 using GUI.ModelLayer;
 using GUI.Utilities;
 

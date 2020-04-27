@@ -127,10 +127,10 @@ namespace GUI.CustomerServiceReference {
     public interface ICustomerService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/InsertCustomer", ReplyAction="http://tempuri.org/ICustomerService/InsertCustomerResponse")]
-        void InsertCustomer(GUI.CustomerServiceReference.ServiceCustomer customer);
+        int InsertCustomer(GUI.CustomerServiceReference.ServiceCustomer customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/InsertCustomer", ReplyAction="http://tempuri.org/ICustomerService/InsertCustomerResponse")]
-        System.Threading.Tasks.Task InsertCustomerAsync(GUI.CustomerServiceReference.ServiceCustomer customer);
+        System.Threading.Tasks.Task<int> InsertCustomerAsync(GUI.CustomerServiceReference.ServiceCustomer customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerService/UpdateCustomer", ReplyAction="http://tempuri.org/ICustomerService/UpdateCustomerResponse")]
         void UpdateCustomer(GUI.CustomerServiceReference.ServiceCustomer customer);
@@ -172,11 +172,11 @@ namespace GUI.CustomerServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public void InsertCustomer(GUI.CustomerServiceReference.ServiceCustomer customer) {
-            base.Channel.InsertCustomer(customer);
+        public int InsertCustomer(GUI.CustomerServiceReference.ServiceCustomer customer) {
+            return base.Channel.InsertCustomer(customer);
         }
         
-        public System.Threading.Tasks.Task InsertCustomerAsync(GUI.CustomerServiceReference.ServiceCustomer customer) {
+        public System.Threading.Tasks.Task<int> InsertCustomerAsync(GUI.CustomerServiceReference.ServiceCustomer customer) {
             return base.Channel.InsertCustomerAsync(customer);
         }
         

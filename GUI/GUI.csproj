@@ -151,6 +151,9 @@
     <None Include="Connected Services\CustomerOrderServiceReference\GUI.CustomerOrderServiceReference.ServiceDeliveryDescription.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\CustomerOrderServiceReference\GUI.CustomerOrderServiceReference.ServicePaymentMethod.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\CustomerOrderServiceReference\Service.Model.xsd">
       <SubType>Designer</SubType>
     </None>

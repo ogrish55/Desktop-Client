@@ -6,7 +6,7 @@
       <xs:element minOccurs="0" name="OrderId" type="xs:int" />
       <xs:element minOccurs="0" name="Product" nillable="true" type="tns:ServiceProduct" />
       <xs:element minOccurs="0" name="ProductLineId" type="xs:int" />
-      <xs:element minOccurs="0" name="SubTotal" type="xs:int" />
+      <xs:element minOccurs="0" name="SubTotal" type="xs:decimal" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ServiceProductLine" nillable="true" type="tns:ServiceProductLine" />

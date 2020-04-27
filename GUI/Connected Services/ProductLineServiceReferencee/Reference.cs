@@ -35,7 +35,7 @@ namespace GUI.ProductLineServiceReferencee {
         private int ProductLineIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SubTotalField;
+        private decimal SubTotalField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -100,7 +100,7 @@ namespace GUI.ProductLineServiceReferencee {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SubTotal {
+        public decimal SubTotal {
             get {
                 return this.SubTotalField;
             }
