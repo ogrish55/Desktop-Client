@@ -45,7 +45,8 @@ namespace GUI
                     Name = NameTxt.Text,
                     Price = Convert.ToDecimal(PriceTxt.Text),
                     Description = DescriptionTxt.Text,
-                    AmountOnStock = Convert.ToInt32(AmountOnStockTxt.Text)
+                    AmountOnStock = Convert.ToInt32(AmountOnStockTxt.Text),
+                    Brand = Convert.ToString(BrandTxt.Text)
                 };
                 productControl.AddProduct(product);
                 MessageBox.Show(product.Name + " Successfully added to database");

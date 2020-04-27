@@ -33,6 +33,7 @@ namespace GUI
             txtName.Text = p.Name;
             txtPrice.Text = p.Price.ToString();
             txtDescription.Text = p.Description;
+            txtBrand.Text = p.Brand;
         }
 
         private void btnDone_Click(object sender, RoutedEventArgs e)
@@ -40,19 +41,22 @@ namespace GUI
             string Name;
             decimal Price;
             string Description;
+            string Brand;
 
             try
             {
                 Name = txtName.Text;
                 Price = decimal.Parse(txtPrice.Text);
                 Description = txtDescription.Text;
+                Brand = txtBrand.Text;
  
-                if (Name.Length > 0 && Description.Length > 0 && Price > 0)
+                if (Name.Length > 0 && Description.Length > 0 && Price > 0 && Brand.Length > 0)
                 {
                     Product updatedProduct = (Product)listProducts.SelectedItem;
                     updatedProduct.Name = Name;
                     updatedProduct.Price = Price;
                     updatedProduct.Description = Description;
+                    updatedProduct.Brand = Brand;
                     
                     pctr.UpdateProduct(updatedProduct);
                     MessageBox.Show(updatedProduct.Name + " has been updated!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);

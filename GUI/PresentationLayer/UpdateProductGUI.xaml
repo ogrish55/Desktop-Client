@@ -8,15 +8,17 @@
         Title="UpdateProductGUI" Height="450" Width="800">
     <Grid RenderTransformOrigin="0.652,0.447">
         <Label Name="lblName" Content="Name:" HorizontalAlignment="Left" Margin="30,48,0,0" VerticalAlignment="Top"/>
-        <Label Name="lblPrice" Content="Price:" HorizontalAlignment="Left" Margin="30,95,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.441,0.498"/>
+        <Label Name="lblPrice" Content="Price:" HorizontalAlignment="Left" Margin="30,79,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.441,0.498"/>
         <TextBox Name="txtName" HorizontalAlignment="Left" Height="23" Margin="131,55,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="txtPrice" HorizontalAlignment="Left" Height="23" Margin="131,102,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.484,0.688"/>
+        <TextBox Name="txtPrice" HorizontalAlignment="Left" Height="23" Margin="131,86,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.484,0.688"/>
         <TextBox Name="txtSearch" HorizontalAlignment="Left" Height="23" Margin="315,380,0,0" TextWrapping="Wrap" Text="Search..." VerticalAlignment="Top" Width="120" TextChanged="txtSearch_TextChanged"/>
         <ListBox Name="listProducts" HorizontalAlignment="Left" Height="365" Margin="315,10,0,0" VerticalAlignment="Top" Width="410" SelectionChanged="listProducts_SelectionChanged"/>
-        <Label Name="lblDescription" Content="Description:" HorizontalAlignment="Left" Margin="30,142,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="txtDescription" HorizontalAlignment="Left" Height="197" Margin="39,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
+        <Label Name="lblDescription" Content="Description:" HorizontalAlignment="Left" Margin="30,141,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtDescription" HorizontalAlignment="Left" Height="197" Margin="39,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
         <Button Name="btnDone" Content="Update" HorizontalAlignment="Left" Margin="561,384,0,0" VerticalAlignment="Top" Width="75" Click="btnDone_Click"/>
         <Button Name ="btnBack" Content="Back" HorizontalAlignment="Left" Margin="650,384,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
+        <Label x:Name="lblBrand" Content="Brand" HorizontalAlignment="Left" Margin="30,110,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.441,0.498"/>
+        <TextBox x:Name="txtBrand" HorizontalAlignment="Left" Height="23" Margin="131,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.484,0.688"/>
 
     </Grid>
 </Window>

@@ -17,6 +17,7 @@ namespace GUI.Utilities
             productToReturn.Price = serviceProduct.Price;
             productToReturn.Description = serviceProduct.Description;
             productToReturn.ProductId = serviceProduct.ProductId;
+            productToReturn.Brand = serviceProduct.Brand;
 
             return productToReturn;
         }
@@ -29,6 +30,7 @@ namespace GUI.Utilities
             producttoReturn.Price = desktopProduct.Price;
             producttoReturn.ProductId = desktopProduct.ProductId;
             producttoReturn.AmountOnStock = desktopProduct.AmountOnStock;
+            producttoReturn.Brand = desktopProduct.Brand;
             return producttoReturn;
         }
 
