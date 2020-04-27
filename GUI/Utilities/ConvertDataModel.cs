@@ -5,13 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using GUI.CustomerOrderServiceReference;
 using GUI.ModelLayer;
-using GUI.ProductServiceReference;
 
 namespace GUI.Utilities
 {
     public class ConvertDataModel : IConvertModel
     {
-        public Product ConvertFromServiceProduct(ServiceProduct serviceProduct)
+        public Product ConvertFromServiceProduct(ProductLineServiceReferencee.ServiceProduct serviceProduct)
         {
             Product productToReturn = new Product();
             productToReturn.Name = serviceProduct.Name;
@@ -22,9 +21,9 @@ namespace GUI.Utilities
             return productToReturn;
         }
 
-        public ServiceProduct ConvertToServiceProduct(Product desktopProduct)
+        public ProductLineServiceReferencee.ServiceProduct ConvertToServiceProduct(Product desktopProduct)
         {
-            ServiceProduct producttoReturn = new ServiceProduct();
+            ProductLineServiceReferencee.ServiceProduct producttoReturn = new ProductLineServiceReferencee.ServiceProduct();
             producttoReturn.Description = desktopProduct.Description;
             producttoReturn.Name = desktopProduct.Name;
             producttoReturn.Price = desktopProduct.Price;
@@ -57,5 +56,6 @@ namespace GUI.Utilities
             orderToReturn.Status = order.Status.ToString();
             return orderToReturn;
         }
+
     }
 }

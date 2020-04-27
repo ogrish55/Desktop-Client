@@ -1,5 +1,5 @@
 ﻿using GUI.ModelLayer;
-using GUI.ProductServiceReference;
+using GUI.ProductLineServiceReferencee;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ namespace GUI.ServiceLayer
         {
             IEnumerable<ServiceProduct> proxyProducts = null;
 
-            using (ProductServiceClient productProxy = new ProductServiceClient())
+            using (ProductLineServiceClient productProxy = new ProductLineServiceClient())
             {
                 proxyProducts = productProxy.GetAllProducts();
             }
@@ -25,7 +25,7 @@ namespace GUI.ServiceLayer
         public void InsertProduct(ServiceProduct product)
         {
             
-            using(ProductServiceClient productProxy = new ProductServiceClient())
+            using(ProductLineServiceClient productProxy = new ProductLineServiceClient())
             {
                 productProxy.InsertProduct(product);
             }
@@ -33,7 +33,7 @@ namespace GUI.ServiceLayer
 
         public void DeleteProduct(int productId)
         {
-            using (ProductServiceClient productProxy = new ProductServiceClient())
+            using (ProductLineServiceClient productProxy = new ProductLineServiceClient())
             {
                 productProxy.DeleteProduct(productId);
             }
@@ -41,7 +41,7 @@ namespace GUI.ServiceLayer
 
         public void UpdateProduct(ServiceProduct product)
         {
-            using(ProductServiceClient productProxy = new ProductServiceClient())
+            using(ProductLineServiceClient productProxy = new ProductLineServiceClient())
             {
                 Console.WriteLine(product.Name);
                 Console.Read();

@@ -29,13 +29,13 @@ namespace GUI.ProductLineServiceReferencee {
         private int OrderIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ProductIdField;
+        private GUI.ProductLineServiceReferencee.ServiceProduct ProductField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ProductLineIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int SubTotalField;
+        private decimal SubTotalField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -74,14 +74,14 @@ namespace GUI.ProductLineServiceReferencee {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ProductId {
+        public GUI.ProductLineServiceReferencee.ServiceProduct Product {
             get {
-                return this.ProductIdField;
+                return this.ProductField;
             }
             set {
-                if ((this.ProductIdField.Equals(value) != true)) {
-                    this.ProductIdField = value;
-                    this.RaisePropertyChanged("ProductId");
+                if ((object.ReferenceEquals(this.ProductField, value) != true)) {
+                    this.ProductField = value;
+                    this.RaisePropertyChanged("Product");
                 }
             }
         }
@@ -100,7 +100,7 @@ namespace GUI.ProductLineServiceReferencee {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int SubTotal {
+        public decimal SubTotal {
             get {
                 return this.SubTotalField;
             }
@@ -108,6 +108,115 @@ namespace GUI.ProductLineServiceReferencee {
                 if ((this.SubTotalField.Equals(value) != true)) {
                     this.SubTotalField = value;
                     this.RaisePropertyChanged("SubTotal");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceProduct", Namespace="http://schemas.datacontract.org/2004/07/Service.Model")]
+    [System.SerializableAttribute()]
+    public partial class ServiceProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AmountOnStockField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AmountOnStock {
+            get {
+                return this.AmountOnStockField;
+            }
+            set {
+                if ((this.AmountOnStockField.Equals(value) != true)) {
+                    this.AmountOnStockField = value;
+                    this.RaisePropertyChanged("AmountOnStock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductId {
+            get {
+                return this.ProductIdField;
+            }
+            set {
+                if ((this.ProductIdField.Equals(value) != true)) {
+                    this.ProductIdField = value;
+                    this.RaisePropertyChanged("ProductId");
                 }
             }
         }
@@ -143,6 +252,36 @@ namespace GUI.ProductLineServiceReferencee {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/UpdateProductLine", ReplyAction="http://tempuri.org/IProductLineService/UpdateProductLineResponse")]
         System.Threading.Tasks.Task UpdateProductLineAsync(GUI.ProductLineServiceReferencee.ServiceProductLine serviceProductLine);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/InsertProduct", ReplyAction="http://tempuri.org/IProductLineService/InsertProductResponse")]
+        void InsertProduct(GUI.ProductLineServiceReferencee.ServiceProduct product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/InsertProduct", ReplyAction="http://tempuri.org/IProductLineService/InsertProductResponse")]
+        System.Threading.Tasks.Task InsertProductAsync(GUI.ProductLineServiceReferencee.ServiceProduct product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/DeleteProduct", ReplyAction="http://tempuri.org/IProductLineService/DeleteProductResponse")]
+        void DeleteProduct(int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/DeleteProduct", ReplyAction="http://tempuri.org/IProductLineService/DeleteProductResponse")]
+        System.Threading.Tasks.Task DeleteProductAsync(int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/UpdateProduct", ReplyAction="http://tempuri.org/IProductLineService/UpdateProductResponse")]
+        void UpdateProduct(GUI.ProductLineServiceReferencee.ServiceProduct product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/UpdateProduct", ReplyAction="http://tempuri.org/IProductLineService/UpdateProductResponse")]
+        System.Threading.Tasks.Task UpdateProductAsync(GUI.ProductLineServiceReferencee.ServiceProduct product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/GetProductById", ReplyAction="http://tempuri.org/IProductLineService/GetProductByIdResponse")]
+        GUI.ProductLineServiceReferencee.ServiceProduct GetProductById(int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/GetProductById", ReplyAction="http://tempuri.org/IProductLineService/GetProductByIdResponse")]
+        System.Threading.Tasks.Task<GUI.ProductLineServiceReferencee.ServiceProduct> GetProductByIdAsync(int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/GetAllProducts", ReplyAction="http://tempuri.org/IProductLineService/GetAllProductsResponse")]
+        GUI.ProductLineServiceReferencee.ServiceProduct[] GetAllProducts();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/GetAllProducts", ReplyAction="http://tempuri.org/IProductLineService/GetAllProductsResponse")]
+        System.Threading.Tasks.Task<GUI.ProductLineServiceReferencee.ServiceProduct[]> GetAllProductsAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -194,6 +333,46 @@ namespace GUI.ProductLineServiceReferencee {
         
         public System.Threading.Tasks.Task UpdateProductLineAsync(GUI.ProductLineServiceReferencee.ServiceProductLine serviceProductLine) {
             return base.Channel.UpdateProductLineAsync(serviceProductLine);
+        }
+        
+        public void InsertProduct(GUI.ProductLineServiceReferencee.ServiceProduct product) {
+            base.Channel.InsertProduct(product);
+        }
+        
+        public System.Threading.Tasks.Task InsertProductAsync(GUI.ProductLineServiceReferencee.ServiceProduct product) {
+            return base.Channel.InsertProductAsync(product);
+        }
+        
+        public void DeleteProduct(int productId) {
+            base.Channel.DeleteProduct(productId);
+        }
+        
+        public System.Threading.Tasks.Task DeleteProductAsync(int productId) {
+            return base.Channel.DeleteProductAsync(productId);
+        }
+        
+        public void UpdateProduct(GUI.ProductLineServiceReferencee.ServiceProduct product) {
+            base.Channel.UpdateProduct(product);
+        }
+        
+        public System.Threading.Tasks.Task UpdateProductAsync(GUI.ProductLineServiceReferencee.ServiceProduct product) {
+            return base.Channel.UpdateProductAsync(product);
+        }
+        
+        public GUI.ProductLineServiceReferencee.ServiceProduct GetProductById(int productId) {
+            return base.Channel.GetProductById(productId);
+        }
+        
+        public System.Threading.Tasks.Task<GUI.ProductLineServiceReferencee.ServiceProduct> GetProductByIdAsync(int productId) {
+            return base.Channel.GetProductByIdAsync(productId);
+        }
+        
+        public GUI.ProductLineServiceReferencee.ServiceProduct[] GetAllProducts() {
+            return base.Channel.GetAllProducts();
+        }
+        
+        public System.Threading.Tasks.Task<GUI.ProductLineServiceReferencee.ServiceProduct[]> GetAllProductsAsync() {
+            return base.Channel.GetAllProductsAsync();
         }
     }
 }

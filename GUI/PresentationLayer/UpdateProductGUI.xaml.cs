@@ -1,5 +1,5 @@
 ﻿using GUI.ControlLayer;
-using GUI.ProductServiceReference;
+using GUI.CustomerOrderServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Windows;
