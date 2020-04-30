@@ -37,9 +37,7 @@ namespace GUI.PresentationLayer
                 listOrders.ItemsSource = null;
                 listOrders.Items.Clear();
                 Task<IEnumerable<Order>> taskGetAll = _orderController.GetOrders(OrderController.EnumStatus.All);
-                IEnumerable<Order> result = await taskGetAll;
-
-                listOrders.ItemsSource = result;
+                listOrders.ItemsSource = await taskGetAll;
             }
 
             else if (radioActive.IsChecked == true)
@@ -47,9 +45,7 @@ namespace GUI.PresentationLayer
                 listOrders.ItemsSource = null;
                 listOrders.Items.Clear();
                 Task<IEnumerable<Order>> taskGetActive = _orderController.GetOrders(OrderController.EnumStatus.Active);
-                IEnumerable<Order> result = await taskGetActive;
-
-                listOrders.ItemsSource = result;
+                listOrders.ItemsSource = await taskGetActive;
             }
 
             else if (radioCancel.IsChecked == true)
@@ -57,9 +53,7 @@ namespace GUI.PresentationLayer
                 listOrders.ItemsSource = null;
                 listOrders.Items.Clear();
                 Task<IEnumerable<Order>> taskGetCancelled = _orderController.GetOrders(OrderController.EnumStatus.Cancelled);
-                IEnumerable<Order> result = await taskGetCancelled;
-
-                listOrders.ItemsSource = result;
+                listOrders.ItemsSource = await taskGetCancelled;
             }
         }
 
