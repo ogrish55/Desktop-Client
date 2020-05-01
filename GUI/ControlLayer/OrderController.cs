@@ -17,8 +17,9 @@ namespace GUI.ControlLayer
             Cancelled
             };
 
-        public IEnumerable<Order> GetOrders(EnumStatus status)
+        public async Task<IEnumerable<Order>> GetOrders(EnumStatus status)
         {
+            await Task.Delay(1000);
             OrderService os = new OrderService();
             List<Order> listToReturn = new List<Order>();
             if(status == EnumStatus.All)

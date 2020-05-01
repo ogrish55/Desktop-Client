@@ -30,27 +30,30 @@ namespace GUI.PresentationLayer
             LabelError.Visibility = Visibility.Hidden;
         }
 
-        private void UpdateListBoxOrders()
+        private async Task UpdateListBoxOrders()
         {
-            if(radioAll.IsChecked == true)
+            if (radioAll.IsChecked == true)
             {
                 listOrders.ItemsSource = null;
                 listOrders.Items.Clear();
-                listOrders.ItemsSource =_orderController.GetOrders(OrderController.EnumStatus.All);
+                Task<IEnumerable<Order>> taskGetAll = _orderController.GetOrders(OrderController.EnumStatus.All);
+                listOrders.ItemsSource = await taskGetAll;
             }
 
-            else if(radioActive.IsChecked == true)
+            else if (radioActive.IsChecked == true)
             {
                 listOrders.ItemsSource = null;
                 listOrders.Items.Clear();
-                listOrders.ItemsSource = _orderController.GetOrders(OrderController.EnumStatus.Active);
+                Task<IEnumerable<Order>> taskGetActive = _orderController.GetOrders(OrderController.EnumStatus.Active);
+                listOrders.ItemsSource = await taskGetActive;
             }
 
             else if (radioCancel.IsChecked == true)
             {
                 listOrders.ItemsSource = null;
                 listOrders.Items.Clear();
-                listOrders.ItemsSource = _orderController.GetOrders(OrderController.EnumStatus.Cancelled);
+                Task<IEnumerable<Order>> taskGetCancelled = _orderController.GetOrders(OrderController.EnumStatus.Cancelled);
+                listOrders.ItemsSource = await taskGetCancelled;
             }
         }
 
@@ -63,7 +66,7 @@ namespace GUI.PresentationLayer
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             Order currentOrder = (Order)listOrders.SelectedItem;
-            if(currentOrder != null)
+            if (currentOrder != null)
             {
                 currentOrder.Status = EnumOrderStatus.Cancelled;
                 new OrderController().CancelOrder(currentOrder);
@@ -82,7 +85,7 @@ namespace GUI.PresentationLayer
                 int idToSearchFor = Int32.Parse(TxtSearch.Text);
                 LabelError.Visibility = Visibility.Hidden;
                 Order orderToPresent = new OrderController().GetOrder(idToSearchFor);
-                if(orderToPresent != null)
+                if (orderToPresent != null)
                 {
                     listOrders.ItemsSource = null;
                     listOrders.Items.Add(orderToPresent);
@@ -93,7 +96,7 @@ namespace GUI.PresentationLayer
                     UpdateListBoxOrders();
                 }
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 LabelError.Visibility = Visibility.Visible;
             }
