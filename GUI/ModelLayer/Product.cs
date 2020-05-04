@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace GUI.ModelLayer
 {
     public class Product
@@ -12,7 +7,6 @@ namespace GUI.ModelLayer
         public decimal Price { get; set; }
         public string Description { get; set; }
         public int ProductId { get; set; }
-
         public int AmountOnStock { get; set; }
         public string Brand { get; set; }
 
@@ -21,6 +15,4 @@ namespace GUI.ModelLayer
             return $"{Name} - {Price} - {ProductId} - {Brand}";
         }
     }
-
-
 }
