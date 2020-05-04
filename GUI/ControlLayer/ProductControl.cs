@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using GUI.ServiceLayer;
-using GUI.CustomerOrderServiceReference;
 using GUI.ModelLayer;
 using GUI.Utilities;
 
@@ -12,14 +7,15 @@ namespace GUI.ControlLayer
 {
     public class ProductControl
     {
+        readonly ConvertDataModel Converter = new ConvertDataModel();
+        readonly ProductService ProductService = new ProductService();
       
         public IEnumerable<Product> GetAllProducts()
         {
-            ProductService ps = new ProductService();
             List<Product> listToReturn = new List<Product>();
-            foreach (var item in ps.GetAllProducts())
+            foreach (var item in ProductService.GetAllProducts())
             {
-                listToReturn.Add(new ConvertDataModel().ConvertFromServiceProduct(item));
+                listToReturn.Add(Converter.ConvertFromServiceProduct(item));
             }
             
             return listToReturn;
@@ -27,19 +23,25 @@ namespace GUI.ControlLayer
 
         public void AddProduct(Product product)
         {
-            new ProductService().InsertProduct(new ConvertDataModel().ConvertToServiceProduct(product));
+            ProductLineServiceReferencee.ServiceProduct serviceProduct;
+
+            serviceProduct = Converter.ConvertToServiceProduct(product); // Convert the given product to a serviceProduct
+
+            ProductService.InsertProduct(serviceProduct); // Insert the converted product
         }
 
         public void DeleteProduct(int productId)
         {
-            ProductService ps = new ProductService();
-
-            ps.DeleteProduct(productId);
+            ProductService.DeleteProduct(productId);
         }
 
         public void UpdateProduct(Product product)
         {
-            new ProductService().UpdateProduct(new ConvertDataModel().ConvertToServiceProduct(product));
+            ProductLineServiceReferencee.ServiceProduct serviceProduct;
+
+            serviceProduct = Converter.ConvertToServiceProduct(product); // Convert the given product to a serviceProduct
+
+            ProductService.UpdateProduct(serviceProduct); // Update the converted product
         }
     }
 }

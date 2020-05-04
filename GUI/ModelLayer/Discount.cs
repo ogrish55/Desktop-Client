@@ -10,7 +10,6 @@ namespace GUI.ModelLayer
     {
         public int DiscountId { get; set; }
         public string DiscountCode { get; set; }
-
         public int DiscountValue { get; set; }
     }
 }
