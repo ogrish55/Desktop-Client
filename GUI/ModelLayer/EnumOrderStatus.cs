@@ -10,6 +10,6 @@ namespace GUI.ModelLayer
     {
         Delivered,
         Cancelled,
-        Active,
+        Active
     }
 }
