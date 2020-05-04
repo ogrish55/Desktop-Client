@@ -23,10 +23,22 @@ namespace GUI
     {
 
         ProductControl productControl;
+        private Product product;
+
         public AddProduct()
         {
             InitializeComponent();
             productControl = new ProductControl();
+
+            product = new Product()
+            {
+                Name = null,
+                Price = 0.0m,
+                Description = null,
+                AmountOnStock = 0,
+                Brand = null
+            };
+            this.DataContext = product;
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
