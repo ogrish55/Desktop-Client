@@ -11,13 +11,15 @@
         <Button Content="Add Product" HorizontalAlignment="Left" Height="30" Margin="550,379,0,0" VerticalAlignment="Top" Width="100" Click="AddBtn_Click"/>
         <Label Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,25,0,0"/>
         <Label Content="Price" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,55,0,0" RenderTransformOrigin="1.643,0.531"/>
-        <Label Content="Description" HorizontalAlignment="Left" Margin="14,85,0,0" VerticalAlignment="Top"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="10,117,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="101,25,0,0" Name="NameTxt"/>
         <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="101,55,0,0" Name="PriceTxt"/>
-        <TextBox HorizontalAlignment="Left" Height="216" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="450" Margin="101,85,0,0" Name="DescriptionTxt"/>
+        <TextBox HorizontalAlignment="Left" Height="216" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="450" Margin="97,117,0,0" Name="DescriptionTxt"/>
         <Label Content="Amount On Stock" HorizontalAlignment="Left" Margin="238,25,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="347,28,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Name="AmountOnStockTxt"/>
         <Label Content="Brand" HorizontalAlignment="Left" Margin="238,55,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="347,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="BrandTxt"/>
+        <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="101,83,0,0" x:Name="CategoryTxt"/>
+        <Label Content="Category" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,80,0,0" RenderTransformOrigin="1.643,0.531"/>
     </Grid>
 </Window>

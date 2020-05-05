@@ -34,6 +34,7 @@ namespace GUI
             txtPrice.Text = p.Price.ToString();
             txtDescription.Text = p.Description;
             txtBrand.Text = p.Brand;
+            txtCategory.Text = p.Category;
         }
 
         private void btnDone_Click(object sender, RoutedEventArgs e)
@@ -42,6 +43,7 @@ namespace GUI
             decimal Price;
             string Description;
             string Brand;
+            string Category;
 
             try
             {
@@ -49,14 +51,16 @@ namespace GUI
                 Price = decimal.Parse(txtPrice.Text);
                 Description = txtDescription.Text;
                 Brand = txtBrand.Text;
+                Category = txtCategory.Text;
  
-                if (Name.Length > 0 && Description.Length > 0 && Price > 0 && Brand.Length > 0)
+                if (Name.Length > 0 && Description.Length > 0 && Price > 0 && Brand.Length > 0 && Category.Length > 0)
                 {
                     Product updatedProduct = (Product)listProducts.SelectedItem;
                     updatedProduct.Name = Name;
                     updatedProduct.Price = Price;
                     updatedProduct.Description = Description;
                     updatedProduct.Brand = Brand;
+                    updatedProduct.Category = Category;
                     
                     pctr.UpdateProduct(updatedProduct);
                     MessageBox.Show(updatedProduct.Name + " has been updated!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);

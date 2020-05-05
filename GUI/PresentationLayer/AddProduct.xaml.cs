@@ -46,7 +46,8 @@ namespace GUI
                     Price = Convert.ToDecimal(PriceTxt.Text),
                     Description = DescriptionTxt.Text,
                     AmountOnStock = Convert.ToInt32(AmountOnStockTxt.Text),
-                    Brand = Convert.ToString(BrandTxt.Text)
+                    Brand = Convert.ToString(BrandTxt.Text),
+                    Category = Convert.ToString(CategoryTxt.Text) 
                 };
                 productControl.AddProduct(product);
                 MessageBox.Show(product.Name + " Successfully added to database");
@@ -61,7 +62,7 @@ namespace GUI
         private bool CheckForInput()
         {
             bool success = false;
-            if(NameTxt.Text.Length > 0 && PriceTxt.Text.Length > 0 && DescriptionTxt.Text.Length > 0 && AmountOnStockTxt.Text.Length > 0) 
+            if(NameTxt.Text.Length > 0 && PriceTxt.Text.Length > 0 && DescriptionTxt.Text.Length > 0 && AmountOnStockTxt.Text.Length > 0 && CategoryTxt.Text.Length > 0) 
             {
                 success = true;
                 try
