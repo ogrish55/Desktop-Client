@@ -1,4 +1,4 @@
-﻿using GUI.ControlLayer;
+using GUI.ControlLayer;
 using GUI.ModelLayer;
 using System;
 using System.Collections.Generic;
@@ -24,8 +24,6 @@ namespace GUI
     {
 
         ProductControl productControl;
-        private Product product;
-        private Brand brand;
 
         public AddProduct()
         {
@@ -34,23 +32,32 @@ namespace GUI
 
             BrandCombo.ItemsSource = productControl.GetAllBrands();
             CategoryCombo.ItemsSource = productControl.GetAllCategories();
-            
-            brand = new Brand()
-            {
-                Name = ""
-            };
 
-            product = new Product()
+            Product product = new Product()
             {
                 Name = null,
                 Price = 0.0m,
                 Description = null,
-                AmountOnStock = 0,
-                BrandId = 0,
-                CategoryId = 0
+                AmountOnStock = 0
             };
-            this.DataContext = product;
-            this.DataContext = brand;
+
+            Brand brand = new Brand()
+            {
+                Name = null
+            };
+
+            Category category = new Category()
+            {
+                Name = null
+            };
+
+            this.DataContext = new
+            {
+                Product = product,
+                Brand = brand,
+                Category = category
+            };
+
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -108,3 +115,4 @@ namespace GUI
 
     }
 }
+
