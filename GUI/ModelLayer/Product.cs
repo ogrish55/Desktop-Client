@@ -51,15 +51,28 @@ namespace GUI.ModelLayer
             }
         }
 
-        private string brand;
-        public string Brand {
-            get { return brand; }
+        private int brandId;
+        public int BrandId {
+            get { return brandId; }
             set
             {
-                brand = value;
+                brandId = value;
                 OnPropertyChanged();
             }
         }
+
+        private int categoryId;
+        public int CategoryId
+        {
+            get { return categoryId; }
+            set
+            {
+                categoryId = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public byte[] rowId;
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged(
@@ -68,7 +81,7 @@ namespace GUI.ModelLayer
         }
         public override string ToString()
         {
-            return $"{Name} - {Price} - {ProductId} - {Brand}";
+            return $"{Name} - {Price} - {ProductId} - {BrandId} - {CategoryId}";
         }
 
     }

@@ -2,6 +2,7 @@
 using GUI.ModelLayer;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,11 +25,20 @@ namespace GUI
 
         ProductControl productControl;
         private Product product;
+        private Brand brand;
 
         public AddProduct()
         {
             InitializeComponent();
             productControl = new ProductControl();
+
+            BrandCombo.ItemsSource = productControl.GetAllBrands();
+            CategoryCombo.ItemsSource = productControl.GetAllCategories();
+            
+            brand = new Brand()
+            {
+                Name = ""
+            };
 
             product = new Product()
             {
@@ -36,9 +46,11 @@ namespace GUI
                 Price = 0.0m,
                 Description = null,
                 AmountOnStock = 0,
-                Brand = null
+                BrandId = 0,
+                CategoryId = 0
             };
             this.DataContext = product;
+            this.DataContext = brand;
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -50,6 +62,8 @@ namespace GUI
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
+            Brand selectedBrand = (Brand)BrandCombo.SelectedItem;
+            Category selectedCategory = (Category)CategoryCombo.SelectedItem;
             if (CheckForInput())
             {
                 Product product = new Product
@@ -58,8 +72,8 @@ namespace GUI
                     Price = Convert.ToDecimal(PriceTxt.Text),
                     Description = DescriptionTxt.Text,
                     AmountOnStock = Convert.ToInt32(AmountOnStockTxt.Text),
-                    Brand = Convert.ToString(BrandTxt.Text),
-                    Category = Convert.ToString(CategoryTxt.Text) 
+                    BrandId = selectedBrand.BrandId,
+                    CategoryId = selectedCategory.CategoryId
                 };
                 productControl.AddProduct(product);
                 MessageBox.Show(product.Name + " Successfully added to database");
@@ -74,7 +88,8 @@ namespace GUI
         private bool CheckForInput()
         {
             bool success = false;
-            if(NameTxt.Text.Length > 0 && PriceTxt.Text.Length > 0 && DescriptionTxt.Text.Length > 0 && AmountOnStockTxt.Text.Length > 0 && CategoryTxt.Text.Length > 0) 
+            if (NameTxt.Text.Length > 0 && PriceTxt.Text.Length > 0 && DescriptionTxt.Text.Length > 0 && AmountOnStockTxt.Text.Length > 0 && CategoryCombo.SelectedItem != null
+                && BrandCombo.SelectedItem != null)
             {
                 success = true;
                 try
@@ -89,5 +104,7 @@ namespace GUI
             }
             return success;
         }
+
+
     }
 }

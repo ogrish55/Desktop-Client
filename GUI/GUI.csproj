@@ -76,6 +76,8 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ControlLayer\OrderController.cs" />
+    <Compile Include="ModelLayer\Brand.cs" />
+    <Compile Include="ModelLayer\Category.cs" />
     <Compile Include="ModelLayer\Discount.cs" />
     <Compile Include="ModelLayer\EnumPaymentMethods.cs" />
     <Compile Include="ModelLayer\Order.cs" />
@@ -174,7 +176,16 @@
     <None Include="Connected Services\CustomerServiceReference\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ProductLineServiceReferencee\GUI.ProductLineServiceReferencee.ServiceBrand.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProductLineServiceReferencee\GUI.ProductLineServiceReferencee.ServiceCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ProductLineServiceReferencee\GUI.ProductLineServiceReferencee.ServiceProduct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProductLineServiceReferencee\GUI.ProductLineServiceReferencee.ServiceReview.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ProductLineServiceReferencee\Service.Model.xsd">

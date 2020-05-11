@@ -11,15 +11,14 @@
         <Button Content="Add Product" HorizontalAlignment="Left" Height="30" Margin="555,358,0,0" VerticalAlignment="Top" Width="100" Click="AddBtn_Click"/>
         <Label Content="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="42,25,0,0"/>
         <Label Content="Price" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="48,55,0,0" RenderTransformOrigin="1.643,0.531"/>
-        <Label Content="Description" HorizontalAlignment="Left" Margin="14,85,0,0" VerticalAlignment="Top"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="14,127,0,0" VerticalAlignment="Top"/>
         <Label Content="Amount On Stock" HorizontalAlignment="Left" Margin="238,25,0,0" VerticalAlignment="Top"/>
         <Label Content="Brand" HorizontalAlignment="Left" Margin="238,55,0,0" VerticalAlignment="Top"/>
 
         <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" Margin="101,25,0,0" Name="NameTxt"/>
         <TextBox HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120" Margin="101,55,0,0" Name="PriceTxt"/>
-        <TextBox HorizontalAlignment="Left" Height="243" TextWrapping="Wrap" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="361" Margin="101,85,0,0" Name="DescriptionTxt"/>
+        <TextBox HorizontalAlignment="Left" Height="243" TextWrapping="Wrap" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="361" Margin="101,127,0,0" Name="DescriptionTxt"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="347,28,0,0" TextWrapping="Wrap" Text="{Binding AmountOnStock, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="115" Name="AmountOnStockTxt"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="347,58,0,0" TextWrapping="Wrap" Text="{Binding Brand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="115" Name="BrandTxt"/>
 
         <TextBlock HorizontalAlignment="Left" Height="28" Margin="555,117,0,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" Width="218"/>
         <TextBlock HorizontalAlignment="Left" Height="28" Margin="555,150,0,0" TextWrapping="Wrap" Text="{Binding Brand}" VerticalAlignment="Top" Width="218"/>
@@ -33,6 +32,9 @@
         <Label Content="Amount: " HorizontalContentAlignment="Right" Height="28" Margin="462,211,242,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="Description: " HorizontalContentAlignment="Right" Height="28" Margin="462,244,242,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="Product to create" HorizontalContentAlignment="Center" Height="27" Margin="472,85,9,0" VerticalAlignment="Top" Width="311" FontWeight="Bold" FontSize="14" />
+        <ComboBox HorizontalAlignment="Left" Margin="347,59,0,0" Text="{Binding Brand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="115" Name="BrandCombo" />
+        <Label Content="Category" HorizontalAlignment="Left" Margin="38,87,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="101,90,0,0" VerticalAlignment="Top" Width="120" Name="CategoryCombo"/>
 
 
     </Grid>
