@@ -2,6 +2,7 @@
 using GUI.ModelLayer;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,22 +24,40 @@ namespace GUI
     {
 
         ProductControl productControl;
-        private Product product;
 
         public AddProduct()
         {
             InitializeComponent();
             productControl = new ProductControl();
 
-            product = new Product()
+            BrandCombo.ItemsSource = productControl.GetAllBrands();
+            CategoryCombo.ItemsSource = productControl.GetAllCategories();
+
+            Product product = new Product()
             {
                 Name = null,
                 Price = 0.0m,
                 Description = null,
-                AmountOnStock = 0,
-                Brand = null
+                AmountOnStock = 0
             };
-            this.DataContext = product;
+
+            Brand brand = new Brand()
+            {
+                Name = null
+            };
+
+            Category category = new Category()
+            {
+                Name = null
+            };
+
+            this.DataContext = new
+            {
+                Product = product,
+                Brand = brand,
+                Category = category
+            };
+
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -50,6 +69,8 @@ namespace GUI
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
+            Brand selectedBrand = (Brand)BrandCombo.SelectedItem;
+            Category selectedCategory = (Category)CategoryCombo.SelectedItem;
             if (CheckForInput())
             {
                 Product product = new Product
@@ -58,7 +79,8 @@ namespace GUI
                     Price = Convert.ToDecimal(PriceTxt.Text),
                     Description = DescriptionTxt.Text,
                     AmountOnStock = Convert.ToInt32(AmountOnStockTxt.Text),
-                    Brand = Convert.ToString(BrandTxt.Text)
+                    BrandId = selectedBrand.BrandId,
+                    CategoryId = selectedCategory.CategoryId
                 };
                 productControl.AddProduct(product);
                 MessageBox.Show(product.Name + " Successfully added to database");
@@ -73,7 +95,8 @@ namespace GUI
         private bool CheckForInput()
         {
             bool success = false;
-            if(NameTxt.Text.Length > 0 && PriceTxt.Text.Length > 0 && DescriptionTxt.Text.Length > 0 && AmountOnStockTxt.Text.Length > 0) 
+            if (NameTxt.Text.Length > 0 && PriceTxt.Text.Length > 0 && DescriptionTxt.Text.Length > 0 && AmountOnStockTxt.Text.Length > 0 && CategoryCombo.SelectedItem != null
+                && BrandCombo.SelectedItem != null)
             {
                 success = true;
                 try
@@ -88,5 +111,7 @@ namespace GUI
             }
             return success;
         }
+
+
     }
 }
