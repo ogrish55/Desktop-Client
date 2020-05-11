@@ -15,10 +15,18 @@ namespace GUI
     public partial class UpdateProductGUI : Window
     {
         private ProductControl pctr;
+        private List<Brand> brands;
+        private List<Category> categories;
         public UpdateProductGUI()
         {
-            pctr = new ProductControl();
             InitializeComponent();
+
+            pctr = new ProductControl();
+            brands = (List<Brand>)pctr.GetAllBrands();
+            categories = (List<Category>)pctr.GetAllCategories();
+            BrandCombo.ItemsSource = brands;
+            CategoryCombo.ItemsSource = categories;
+
             listProducts.ItemsSource = pctr.GetAllProducts();
         }
 
@@ -33,8 +41,35 @@ namespace GUI
             txtName.Text = p.Name;
             txtPrice.Text = p.Price.ToString();
             txtDescription.Text = p.Description;
-            txtBrand.Text = p.Brand;
-            txtCategory.Text = p.Category;
+            BrandCombo.Text = GetBrandName(p.BrandId);
+            CategoryCombo.Text = GetCategoryName(p.CategoryId);
+
+        }
+
+        private string GetBrandName(int id)
+        {
+            string brandName = "";
+            foreach (var brand in brands)
+            {
+                if (id == brand.BrandId)
+                {
+                    brandName = brand.Name;
+                }
+            }
+            return brandName;
+        }
+
+        private string GetCategoryName(int id)
+        {
+            string categoryName = "";
+            foreach (var category in categories)
+            {
+                if (id == category.CategoryId)
+                {
+                    categoryName = category.Name;
+                }
+            }
+            return categoryName;
         }
 
         private void btnDone_Click(object sender, RoutedEventArgs e)
@@ -42,31 +77,33 @@ namespace GUI
             string Name;
             decimal Price;
             string Description;
-            string Brand;
-            string Category;
+            int BrandId;
+            int CategoryId;
+
+            Brand selectedBrand = (Brand)BrandCombo.SelectedItem;
+            Category selectedCategory = (Category)CategoryCombo.SelectedItem;
 
             try
             {
                 Name = txtName.Text;
                 Price = decimal.Parse(txtPrice.Text);
                 Description = txtDescription.Text;
-                Brand = txtBrand.Text;
-                Category = txtCategory.Text;
- 
-                if (Name.Length > 0 && Description.Length > 0 && Price > 0 && Brand.Length > 0 && Category.Length > 0)
+                BrandId = selectedBrand.BrandId;
+                CategoryId = selectedCategory.CategoryId;
+
+                if (Name.Length > 0 && Description.Length > 0 && Price > 0 && BrandId > 0 && CategoryId > 0)
                 {
                     Product updatedProduct = (Product)listProducts.SelectedItem;
                     updatedProduct.Name = Name;
                     updatedProduct.Price = Price;
                     updatedProduct.Description = Description;
-                    updatedProduct.Brand = Brand;
-                    updatedProduct.Category = Category;
-                    
+                    updatedProduct.BrandId = BrandId;
+                    updatedProduct.CategoryId = CategoryId;
+
                     pctr.UpdateProduct(updatedProduct);
                     MessageBox.Show(updatedProduct.Name + " has been updated!", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
-                    listProducts.Items.Refresh();
-                    
                 }
+                listProducts.Items.Refresh();
             }
             catch (Exception ex)
             {
@@ -77,7 +114,7 @@ namespace GUI
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             //Search function
-            
+
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

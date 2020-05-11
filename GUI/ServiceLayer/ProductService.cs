@@ -19,8 +19,8 @@ namespace GUI.ServiceLayer
 
         public void InsertProduct(ServiceProduct product)
         {
-            
-            using(ProductLineServiceClient productProxy = new ProductLineServiceClient())
+
+            using (ProductLineServiceClient productProxy = new ProductLineServiceClient())
             {
                 productProxy.InsertProduct(product);
             }
@@ -36,10 +36,31 @@ namespace GUI.ServiceLayer
 
         public void UpdateProduct(ServiceProduct product)
         {
-            using(ProductLineServiceClient productProxy = new ProductLineServiceClient())
+            using (ProductLineServiceClient productProxy = new ProductLineServiceClient())
             {
                 productProxy.UpdateProduct(product);
             }
         }
+
+        public IEnumerable<ServiceCategory> GetAllCategories()
+        {
+            IEnumerable<ServiceCategory> serviceCategories = null;
+            using (ProductLineServiceClient productProxy = new ProductLineServiceClient())
+            {
+                serviceCategories = productProxy.GetAllCategories();
+            }
+            return serviceCategories;
+        }
+
+        public IEnumerable<ServiceBrand> GetAllBrands()
+        {
+            IEnumerable<ServiceBrand> serviceBrands = null;
+            using (ProductLineServiceClient productProxy = new ProductLineServiceClient())
+            {
+                serviceBrands = productProxy.GetAllBrands();
+            }
+            return serviceBrands;
+        }
+
     }
 }

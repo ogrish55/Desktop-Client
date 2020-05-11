@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GUI.CustomerOrderServiceReference;
 using GUI.ModelLayer;
+using GUI.ProductLineServiceReferencee;
 
 namespace GUI.Utilities
 {
@@ -17,7 +18,9 @@ namespace GUI.Utilities
             productToReturn.Price = serviceProduct.Price;
             productToReturn.Description = serviceProduct.Description;
             productToReturn.ProductId = serviceProduct.ProductId;
-            productToReturn.Brand = serviceProduct.Brand;
+            productToReturn.BrandId = serviceProduct.BrandId;
+            productToReturn.CategoryId = serviceProduct.CategoryId;
+            productToReturn.rowId = serviceProduct.rowId;
 
             return productToReturn;
         }
@@ -30,14 +33,16 @@ namespace GUI.Utilities
             producttoReturn.Price = desktopProduct.Price;
             producttoReturn.ProductId = desktopProduct.ProductId;
             producttoReturn.AmountOnStock = desktopProduct.AmountOnStock;
-            producttoReturn.Brand = desktopProduct.Brand;
+            producttoReturn.BrandId = desktopProduct.BrandId;
+            producttoReturn.CategoryId = desktopProduct.CategoryId;
+            producttoReturn.rowId = desktopProduct.rowId;
             return producttoReturn;
         }
 
         public Order ConvertFromServiceOrder(ServiceCustomerOrder item)
         {
             Order orderToReturn = null;
-            if(item != null)
+            if (item != null)
             {
                 orderToReturn = new Order();
                 orderToReturn.Date = item.DateOrder;
@@ -57,6 +62,22 @@ namespace GUI.Utilities
             orderToReturn.OrderId = order.OrderId;
             orderToReturn.Status = order.Status.ToString();
             return orderToReturn;
+        }
+
+        public Category ConvertFromServiceCategory(ServiceCategory serviceCategory)
+        {
+            Category categoryToReturn = new Category();
+            categoryToReturn.Name = serviceCategory.Name;
+            categoryToReturn.CategoryId = serviceCategory.CategoryId;
+            return categoryToReturn;
+        }
+
+        public Brand ConvertFromServiceBrand(ServiceBrand serviceBrand)
+        {
+            Brand brandToReturn = new Brand();
+            brandToReturn.Name = serviceBrand.Name;
+            brandToReturn.BrandId = serviceBrand.BrandId;
+            return brandToReturn;
         }
 
     }
