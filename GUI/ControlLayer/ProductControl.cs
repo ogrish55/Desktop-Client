@@ -2,6 +2,7 @@
 using GUI.ServiceLayer;
 using GUI.ModelLayer;
 using GUI.Utilities;
+using System;
 
 namespace GUI.ControlLayer
 {
@@ -9,7 +10,7 @@ namespace GUI.ControlLayer
     {
         readonly ConvertDataModel Converter = new ConvertDataModel();
         readonly ProductService ProductService = new ProductService();
-      
+
         public IEnumerable<Product> GetAllProducts()
         {
             List<Product> listToReturn = new List<Product>();
@@ -17,7 +18,7 @@ namespace GUI.ControlLayer
             {
                 listToReturn.Add(Converter.ConvertFromServiceProduct(item));
             }
-            
+
             return listToReturn;
         }
 
@@ -42,6 +43,26 @@ namespace GUI.ControlLayer
             serviceProduct = Converter.ConvertToServiceProduct(product); // Convert the given product to a serviceProduct
 
             ProductService.UpdateProduct(serviceProduct); // Update the converted product
+        }
+
+        public IEnumerable<Category> GetAllCategories()
+        {
+            List<Category> listToReturn = new List<Category>();
+            foreach (var item in ProductService.GetAllCategories())
+            {
+                listToReturn.Add(Converter.ConvertFromServiceCategory(item));
+            }
+            return listToReturn;
+        }
+
+        public IEnumerable<Brand> GetAllBrands()
+        {
+            List<Brand> listToReturn = new List<Brand>();
+            foreach (var item in ProductService.GetAllBrands())
+            {
+                listToReturn.Add(Converter.ConvertFromServiceBrand(item));
+            }
+            return listToReturn;
         }
     }
 }

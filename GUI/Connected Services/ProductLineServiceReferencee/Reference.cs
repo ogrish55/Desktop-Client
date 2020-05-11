@@ -15,6 +15,128 @@ namespace GUI.ProductLineServiceReferencee {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCategory", Namespace="http://schemas.datacontract.org/2004/07/Service.Model")]
+    [System.SerializableAttribute()]
+    public partial class ServiceCategory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CategoryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CategoryId {
+            get {
+                return this.CategoryIdField;
+            }
+            set {
+                if ((this.CategoryIdField.Equals(value) != true)) {
+                    this.CategoryIdField = value;
+                    this.RaisePropertyChanged("CategoryId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceBrand", Namespace="http://schemas.datacontract.org/2004/07/Service.Model")]
+    [System.SerializableAttribute()]
+    public partial class ServiceBrand : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BrandIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BrandId {
+            get {
+                return this.BrandIdField;
+            }
+            set {
+                if ((this.BrandIdField.Equals(value) != true)) {
+                    this.BrandIdField = value;
+                    this.RaisePropertyChanged("BrandId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceProductLine", Namespace="http://schemas.datacontract.org/2004/07/Service.Model")]
     [System.SerializableAttribute()]
     public partial class ServiceProductLine : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -135,7 +257,10 @@ namespace GUI.ProductLineServiceReferencee {
         private int AmountOnStockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string BrandField;
+        private int BrandIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CategoryIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
@@ -148,6 +273,9 @@ namespace GUI.ProductLineServiceReferencee {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ProductIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] rowIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -173,14 +301,27 @@ namespace GUI.ProductLineServiceReferencee {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Brand {
+        public int BrandId {
             get {
-                return this.BrandField;
+                return this.BrandIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.BrandField, value) != true)) {
-                    this.BrandField = value;
-                    this.RaisePropertyChanged("Brand");
+                if ((this.BrandIdField.Equals(value) != true)) {
+                    this.BrandIdField = value;
+                    this.RaisePropertyChanged("BrandId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CategoryId {
+            get {
+                return this.CategoryIdField;
+            }
+            set {
+                if ((this.CategoryIdField.Equals(value) != true)) {
+                    this.CategoryIdField = value;
+                    this.RaisePropertyChanged("CategoryId");
                 }
             }
         }
@@ -237,6 +378,96 @@ namespace GUI.ProductLineServiceReferencee {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] rowId {
+            get {
+                return this.rowIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.rowIdField, value) != true)) {
+                    this.rowIdField = value;
+                    this.RaisePropertyChanged("rowId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview", Namespace="http://schemas.datacontract.org/2004/07/Service.Model")]
+    [System.SerializableAttribute()]
+    public partial class ServiceReview : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CommentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RatingField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ReviewIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Comment {
+            get {
+                return this.CommentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CommentField, value) != true)) {
+                    this.CommentField = value;
+                    this.RaisePropertyChanged("Comment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Rating {
+            get {
+                return this.RatingField;
+            }
+            set {
+                if ((this.RatingField.Equals(value) != true)) {
+                    this.RatingField = value;
+                    this.RaisePropertyChanged("Rating");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ReviewId {
+            get {
+                return this.ReviewIdField;
+            }
+            set {
+                if ((this.ReviewIdField.Equals(value) != true)) {
+                    this.ReviewIdField = value;
+                    this.RaisePropertyChanged("ReviewId");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -250,6 +481,18 @@ namespace GUI.ProductLineServiceReferencee {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ProductLineServiceReferencee.IProductLineService")]
     public interface IProductLineService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/GetAllCategories", ReplyAction="http://tempuri.org/IProductLineService/GetAllCategoriesResponse")]
+        GUI.ProductLineServiceReferencee.ServiceCategory[] GetAllCategories();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/GetAllCategories", ReplyAction="http://tempuri.org/IProductLineService/GetAllCategoriesResponse")]
+        System.Threading.Tasks.Task<GUI.ProductLineServiceReferencee.ServiceCategory[]> GetAllCategoriesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/GetAllBrands", ReplyAction="http://tempuri.org/IProductLineService/GetAllBrandsResponse")]
+        GUI.ProductLineServiceReferencee.ServiceBrand[] GetAllBrands();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/GetAllBrands", ReplyAction="http://tempuri.org/IProductLineService/GetAllBrandsResponse")]
+        System.Threading.Tasks.Task<GUI.ProductLineServiceReferencee.ServiceBrand[]> GetAllBrandsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/DeleteProductLine", ReplyAction="http://tempuri.org/IProductLineService/DeleteProductLineResponse")]
         void DeleteProductLine(int productLineId);
@@ -298,6 +541,18 @@ namespace GUI.ProductLineServiceReferencee {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/GetAllProducts", ReplyAction="http://tempuri.org/IProductLineService/GetAllProductsResponse")]
         System.Threading.Tasks.Task<GUI.ProductLineServiceReferencee.ServiceProduct[]> GetAllProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/GetAllReviewsByProductId", ReplyAction="http://tempuri.org/IProductLineService/GetAllReviewsByProductIdResponse")]
+        GUI.ProductLineServiceReferencee.ServiceReview[] GetAllReviewsByProductId(int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/GetAllReviewsByProductId", ReplyAction="http://tempuri.org/IProductLineService/GetAllReviewsByProductIdResponse")]
+        System.Threading.Tasks.Task<GUI.ProductLineServiceReferencee.ServiceReview[]> GetAllReviewsByProductIdAsync(int productId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/InsertReview", ReplyAction="http://tempuri.org/IProductLineService/InsertReviewResponse")]
+        int InsertReview(GUI.ProductLineServiceReferencee.ServiceReview review);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductLineService/InsertReview", ReplyAction="http://tempuri.org/IProductLineService/InsertReviewResponse")]
+        System.Threading.Tasks.Task<int> InsertReviewAsync(GUI.ProductLineServiceReferencee.ServiceReview review);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -325,6 +580,22 @@ namespace GUI.ProductLineServiceReferencee {
         
         public ProductLineServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public GUI.ProductLineServiceReferencee.ServiceCategory[] GetAllCategories() {
+            return base.Channel.GetAllCategories();
+        }
+        
+        public System.Threading.Tasks.Task<GUI.ProductLineServiceReferencee.ServiceCategory[]> GetAllCategoriesAsync() {
+            return base.Channel.GetAllCategoriesAsync();
+        }
+        
+        public GUI.ProductLineServiceReferencee.ServiceBrand[] GetAllBrands() {
+            return base.Channel.GetAllBrands();
+        }
+        
+        public System.Threading.Tasks.Task<GUI.ProductLineServiceReferencee.ServiceBrand[]> GetAllBrandsAsync() {
+            return base.Channel.GetAllBrandsAsync();
         }
         
         public void DeleteProductLine(int productLineId) {
@@ -389,6 +660,22 @@ namespace GUI.ProductLineServiceReferencee {
         
         public System.Threading.Tasks.Task<GUI.ProductLineServiceReferencee.ServiceProduct[]> GetAllProductsAsync() {
             return base.Channel.GetAllProductsAsync();
+        }
+        
+        public GUI.ProductLineServiceReferencee.ServiceReview[] GetAllReviewsByProductId(int productId) {
+            return base.Channel.GetAllReviewsByProductId(productId);
+        }
+        
+        public System.Threading.Tasks.Task<GUI.ProductLineServiceReferencee.ServiceReview[]> GetAllReviewsByProductIdAsync(int productId) {
+            return base.Channel.GetAllReviewsByProductIdAsync(productId);
+        }
+        
+        public int InsertReview(GUI.ProductLineServiceReferencee.ServiceReview review) {
+            return base.Channel.InsertReview(review);
+        }
+        
+        public System.Threading.Tasks.Task<int> InsertReviewAsync(GUI.ProductLineServiceReferencee.ServiceReview review) {
+            return base.Channel.InsertReviewAsync(review);
         }
     }
 }

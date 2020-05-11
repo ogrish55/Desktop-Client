@@ -1,4 +1,4 @@
-﻿using GUI.ControlLayer;
+using GUI.ControlLayer;
 using GUI.ModelLayer;
 using System;
 using System.Collections.Generic;
@@ -115,3 +115,4 @@ namespace GUI
 
     }
 }
+

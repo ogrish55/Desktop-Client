@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GUI.ModelLayer
 {
-    public class Category
+    public class Brand
     {
         private string name;
         public string Name
@@ -20,8 +20,8 @@ namespace GUI.ModelLayer
                 OnPropertyChanged();
             }
         }
+        public int BrandId { get; set; }
 
-        public int CategoryId { get; set; }
         public override string ToString()
         {
             return $"{Name}";
@@ -33,7 +33,7 @@ namespace GUI.ModelLayer
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(caller));
         }
-
     }
-}
 
+
+}
