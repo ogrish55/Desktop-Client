@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using GUI.ModelLayer;
 using GUI.ServiceLayer;
@@ -11,6 +8,9 @@ namespace GUI.ControlLayer
 {
     public class OrderController
     {
+        readonly ConvertDataModel Converter = new ConvertDataModel();
+        readonly OrderService OrderService = new OrderService();
+
         public enum EnumStatus{
             All,
             Active,
@@ -20,29 +20,29 @@ namespace GUI.ControlLayer
         public async Task<IEnumerable<Order>> GetOrders(EnumStatus status)
         {
             await Task.Delay(1000);
-            OrderService os = new OrderService();
             List<Order> listToReturn = new List<Order>();
-            if(status == EnumStatus.All)
+
+            if(status == EnumStatus.All) // If Enum status is All, retrieve all orders using the OrderService.
             {
-                foreach (var item in os.GetAllOrders())
+                foreach (var item in OrderService.GetAllOrders())
                 {
-                    listToReturn.Add(new ConvertDataModel().ConvertFromServiceOrder(item));
+                    listToReturn.Add(Converter.ConvertFromServiceOrder(item));
                 }
             }
 
-            if(status == EnumStatus.Cancelled)
+            if(status == EnumStatus.Cancelled) // If Enum status is Cancelled, retrieve all cancelled orders using the OrderService.
             {
-                foreach (var item in os.GetCancelledOrders())
+                foreach (var item in OrderService.GetCancelledOrders())
                 {
-                    listToReturn.Add(new ConvertDataModel().ConvertFromServiceOrder(item));
+                    listToReturn.Add(Converter.ConvertFromServiceOrder(item));
                 }
             }
 
-            if(status == EnumStatus.Active)
+            if(status == EnumStatus.Active) // If Enum status is Active, retrieve all active orders using the OrderService.
             {
-                foreach (var item in os.GetActiveOrders())
+                foreach (var item in OrderService.GetActiveOrders())
                 {
-                    listToReturn.Add(new ConvertDataModel().ConvertFromServiceOrder(item));
+                    listToReturn.Add(Converter.ConvertFromServiceOrder(item));
                 }
             }
 
@@ -51,12 +51,21 @@ namespace GUI.ControlLayer
 
         public void CancelOrder(Order order)
         {
-            new OrderService().UpdateOrder(new ConvertDataModel().ConvertToServiceOrder(order));
+            CustomerOrderServiceReference.ServiceCustomerOrder ServiceOrder;
+
+            ServiceOrder = Converter.ConvertToServiceOrder(order); // Convert Order to ServiceCustomerOrder
+
+            OrderService.UpdateOrder(ServiceOrder); // Update the converted ServiceCustomerOrder
+
         }
 
         public Order GetOrder(int idToSearchFor)
         {
-            return new ConvertDataModel().ConvertFromServiceOrder(new OrderService().GetOrder(idToSearchFor));
+            CustomerOrderServiceReference.ServiceCustomerOrder ServiceOrder = OrderService.GetOrder(idToSearchFor); // Get ServiceCustomerOrder object using OrderService
+
+            Order orderToReturn = Converter.ConvertFromServiceOrder(ServiceOrder); // Convert retrieved ServiceCustomerOrder to Order using Converter
+
+            return orderToReturn; // Return converted Order
         }
     }
 }

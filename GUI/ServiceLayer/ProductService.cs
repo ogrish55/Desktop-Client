@@ -1,10 +1,5 @@
-﻿using GUI.ModelLayer;
-using GUI.ProductLineServiceReferencee;
-using System;
+﻿using GUI.ProductLineServiceReferencee;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GUI.ServiceLayer
 {
@@ -43,8 +38,6 @@ namespace GUI.ServiceLayer
         {
             using(ProductLineServiceClient productProxy = new ProductLineServiceClient())
             {
-                Console.WriteLine(product.Name);
-                Console.Read();
                 productProxy.UpdateProduct(product);
             }
         }
