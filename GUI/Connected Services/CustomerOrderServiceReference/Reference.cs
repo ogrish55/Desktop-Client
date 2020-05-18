@@ -292,6 +292,12 @@ namespace GUI.CustomerOrderServiceReference {
         private int AmountOnStockField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int BrandIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CategoryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -302,6 +308,9 @@ namespace GUI.CustomerOrderServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int ProductIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] rowIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -322,6 +331,32 @@ namespace GUI.CustomerOrderServiceReference {
                 if ((this.AmountOnStockField.Equals(value) != true)) {
                     this.AmountOnStockField = value;
                     this.RaisePropertyChanged("AmountOnStock");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int BrandId {
+            get {
+                return this.BrandIdField;
+            }
+            set {
+                if ((this.BrandIdField.Equals(value) != true)) {
+                    this.BrandIdField = value;
+                    this.RaisePropertyChanged("BrandId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CategoryId {
+            get {
+                return this.CategoryIdField;
+            }
+            set {
+                if ((this.CategoryIdField.Equals(value) != true)) {
+                    this.CategoryIdField = value;
+                    this.RaisePropertyChanged("CategoryId");
                 }
             }
         }
@@ -374,6 +409,19 @@ namespace GUI.CustomerOrderServiceReference {
                 if ((this.ProductIdField.Equals(value) != true)) {
                     this.ProductIdField = value;
                     this.RaisePropertyChanged("ProductId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] rowId {
+            get {
+                return this.rowIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.rowIdField, value) != true)) {
+                    this.rowIdField = value;
+                    this.RaisePropertyChanged("rowId");
                 }
             }
         }
@@ -523,7 +571,7 @@ namespace GUI.CustomerOrderServiceReference {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int DiscountAmountField;
+        private decimal DiscountAmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string DiscountCodeField;
@@ -539,7 +587,7 @@ namespace GUI.CustomerOrderServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int DiscountAmount {
+        public decimal DiscountAmount {
             get {
                 return this.DiscountAmountField;
             }
@@ -621,115 +669,6 @@ namespace GUI.CustomerOrderServiceReference {
                 if ((object.ReferenceEquals(this.PaymentMethodValueField, value) != true)) {
                     this.PaymentMethodValueField = value;
                     this.RaisePropertyChanged("PaymentMethodValue");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceCustomer", Namespace="http://schemas.datacontract.org/2004/07/Service.Model")]
-    [System.SerializableAttribute()]
-    public partial class ServiceCustomer : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int CustomerIdField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int PhoneNoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ZipCodeField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Address {
-            get {
-                return this.AddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
-                    this.AddressField = value;
-                    this.RaisePropertyChanged("Address");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int CustomerId {
-            get {
-                return this.CustomerIdField;
-            }
-            set {
-                if ((this.CustomerIdField.Equals(value) != true)) {
-                    this.CustomerIdField = value;
-                    this.RaisePropertyChanged("CustomerId");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
-            get {
-                return this.NameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int PhoneNo {
-            get {
-                return this.PhoneNoField;
-            }
-            set {
-                if ((this.PhoneNoField.Equals(value) != true)) {
-                    this.PhoneNoField = value;
-                    this.RaisePropertyChanged("PhoneNo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int ZipCode {
-            get {
-                return this.ZipCodeField;
-            }
-            set {
-                if ((this.ZipCodeField.Equals(value) != true)) {
-                    this.ZipCodeField = value;
-                    this.RaisePropertyChanged("ZipCode");
                 }
             }
         }
@@ -827,10 +766,10 @@ namespace GUI.CustomerOrderServiceReference {
         System.Threading.Tasks.Task<int> DeleteDiscountAsync(string discountCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetDiscountByCode", ReplyAction="http://tempuri.org/ICustomerOrderService/GetDiscountByCodeResponse")]
-        int GetDiscountByCode(string code);
+        decimal GetDiscountByCode(string code);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetDiscountByCode", ReplyAction="http://tempuri.org/ICustomerOrderService/GetDiscountByCodeResponse")]
-        System.Threading.Tasks.Task<int> GetDiscountByCodeAsync(string code);
+        System.Threading.Tasks.Task<decimal> GetDiscountByCodeAsync(string code);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/GetPaymentMethods", ReplyAction="http://tempuri.org/ICustomerOrderService/GetPaymentMethodsResponse")]
         GUI.CustomerOrderServiceReference.ServicePaymentMethod[] GetPaymentMethods();
@@ -839,10 +778,10 @@ namespace GUI.CustomerOrderServiceReference {
         System.Threading.Tasks.Task<GUI.CustomerOrderServiceReference.ServicePaymentMethod[]> GetPaymentMethodsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/FinishCheckout", ReplyAction="http://tempuri.org/ICustomerOrderService/FinishCheckoutResponse")]
-        bool FinishCheckout(GUI.CustomerOrderServiceReference.ServiceCustomer customer, GUI.CustomerOrderServiceReference.ServiceCustomerOrder order);
+        bool FinishCheckout(GUI.CustomerOrderServiceReference.ServiceCustomerOrder order);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICustomerOrderService/FinishCheckout", ReplyAction="http://tempuri.org/ICustomerOrderService/FinishCheckoutResponse")]
-        System.Threading.Tasks.Task<bool> FinishCheckoutAsync(GUI.CustomerOrderServiceReference.ServiceCustomer customer, GUI.CustomerOrderServiceReference.ServiceCustomerOrder order);
+        System.Threading.Tasks.Task<bool> FinishCheckoutAsync(GUI.CustomerOrderServiceReference.ServiceCustomerOrder order);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -976,11 +915,11 @@ namespace GUI.CustomerOrderServiceReference {
             return base.Channel.DeleteDiscountAsync(discountCode);
         }
         
-        public int GetDiscountByCode(string code) {
+        public decimal GetDiscountByCode(string code) {
             return base.Channel.GetDiscountByCode(code);
         }
         
-        public System.Threading.Tasks.Task<int> GetDiscountByCodeAsync(string code) {
+        public System.Threading.Tasks.Task<decimal> GetDiscountByCodeAsync(string code) {
             return base.Channel.GetDiscountByCodeAsync(code);
         }
         
@@ -992,12 +931,12 @@ namespace GUI.CustomerOrderServiceReference {
             return base.Channel.GetPaymentMethodsAsync();
         }
         
-        public bool FinishCheckout(GUI.CustomerOrderServiceReference.ServiceCustomer customer, GUI.CustomerOrderServiceReference.ServiceCustomerOrder order) {
-            return base.Channel.FinishCheckout(customer, order);
+        public bool FinishCheckout(GUI.CustomerOrderServiceReference.ServiceCustomerOrder order) {
+            return base.Channel.FinishCheckout(order);
         }
         
-        public System.Threading.Tasks.Task<bool> FinishCheckoutAsync(GUI.CustomerOrderServiceReference.ServiceCustomer customer, GUI.CustomerOrderServiceReference.ServiceCustomerOrder order) {
-            return base.Channel.FinishCheckoutAsync(customer, order);
+        public System.Threading.Tasks.Task<bool> FinishCheckoutAsync(GUI.CustomerOrderServiceReference.ServiceCustomerOrder order) {
+            return base.Channel.FinishCheckoutAsync(order);
         }
     }
 }
