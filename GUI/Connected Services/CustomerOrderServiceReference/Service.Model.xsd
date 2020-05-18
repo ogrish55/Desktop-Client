@@ -32,10 +32,13 @@
   <xs:complexType name="ServiceProduct">
     <xs:sequence>
       <xs:element minOccurs="0" name="AmountOnStock" type="xs:int" />
+      <xs:element minOccurs="0" name="BrandId" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryId" type="xs:int" />
       <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Price" type="xs:decimal" />
       <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="rowId" nillable="true" type="xs:base64Binary" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ServiceProduct" nillable="true" type="tns:ServiceProduct" />
@@ -58,7 +61,7 @@
   <xs:element name="ServiceDeliveryDescription" nillable="true" type="tns:ServiceDeliveryDescription" />
   <xs:complexType name="ServiceDiscount">
     <xs:sequence>
-      <xs:element minOccurs="0" name="DiscountAmount" type="xs:int" />
+      <xs:element minOccurs="0" name="DiscountAmount" type="xs:decimal" />
       <xs:element minOccurs="0" name="DiscountCode" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -76,14 +79,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ServicePaymentMethod" nillable="true" type="tns:ServicePaymentMethod" />
-  <xs:complexType name="ServiceCustomer">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="CustomerId" type="xs:int" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PhoneNo" type="xs:int" />
-      <xs:element minOccurs="0" name="ZipCode" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ServiceCustomer" nillable="true" type="tns:ServiceCustomer" />
 </xs:schema>
