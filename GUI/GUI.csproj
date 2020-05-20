@@ -60,6 +60,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ModelLayer\ProductLine.cs" />
     <Compile Include="PresentationLayer\CancelOrder.xaml.cs">
       <DependentUpon>CancelOrder.xaml</DependentUpon>
     </Compile>
@@ -150,7 +151,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
