@@ -60,7 +60,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ModelLayer\ProductLine.cs" />
+    <Compile Include="Connected Services\CustomerOrderServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\CustomerServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProductLineServiceReferencee\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ControlLayer\OrderController.cs" />
+    <Compile Include="ModelLayer\Brand.cs" />
+    <Compile Include="ModelLayer\Category.cs" />
+    <Compile Include="ModelLayer\Discount.cs" />
+    <Compile Include="ModelLayer\EnumPaymentMethods.cs" />
+    <Compile Include="ModelLayer\Order.cs" />
+    <Compile Include="ModelLayer\EnumOrderStatus.cs" />
     <Compile Include="PresentationLayer\CancelOrder.xaml.cs">
       <DependentUpon>CancelOrder.xaml</DependentUpon>
     </Compile>
@@ -70,6 +91,7 @@
     <Compile Include="PresentationLayer\UpdateProductGUI.xaml.cs">
       <DependentUpon>UpdateProductGUI.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ServiceLayer\OrderService.cs" />
     <Compile Include="Utilities\ConvertDataModel.cs" />
     <Compile Include="Utilities\IConvertModel.cs" />
     <Page Include="PresentationLayer\AddProduct.xaml">
@@ -86,11 +108,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Connected Services\ProductServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ControlLayer\ProductControl.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -130,17 +147,55 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ProductServiceReference\GUI.ProductServiceReference.ServiceProduct3.datasource">
+    <None Include="Connected Services\CustomerOrderServiceReference\GUI.CustomerOrderServiceReference.ServiceCustomerOrder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ProductServiceReference\Service.Model.xsd">
+    <None Include="Connected Services\CustomerOrderServiceReference\GUI.CustomerOrderServiceReference.ServiceDeliveryDescription.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomerOrderServiceReference\GUI.CustomerOrderServiceReference.ServicePaymentMethod.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CustomerOrderServiceReference\Service.Model.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProductServiceReference\service.wsdl" />
-    <None Include="Connected Services\ProductServiceReference\service.xsd">
+    <None Include="Connected Services\CustomerOrderServiceReference\service.wsdl" />
+    <None Include="Connected Services\CustomerOrderServiceReference\service.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ProductServiceReference\service1.xsd">
+    <None Include="Connected Services\CustomerOrderServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CustomerServiceReference\Service.Model.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CustomerServiceReference\service.wsdl" />
+    <None Include="Connected Services\CustomerServiceReference\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CustomerServiceReference\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProductLineServiceReferencee\GUI.ProductLineServiceReferencee.ServiceBrand.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProductLineServiceReferencee\GUI.ProductLineServiceReferencee.ServiceCategory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProductLineServiceReferencee\GUI.ProductLineServiceReferencee.ServiceProduct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProductLineServiceReferencee\GUI.ProductLineServiceReferencee.ServiceReview.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProductLineServiceReferencee\Service.Model.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProductLineServiceReferencee\service.wsdl" />
+    <None Include="Connected Services\ProductLineServiceReferencee\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProductLineServiceReferencee\service1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -152,19 +207,45 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ProductLineServiceReferencee\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ProductServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\CustomerOrderServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\CustomerServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\ProductLineServiceReferencee\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ProductServiceReference\configuration91.svcinfo" />
+    <None Include="Connected Services\ProductLineServiceReferencee\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ProductServiceReference\configuration.svcinfo" />
+    <None Include="Connected Services\ProductLineServiceReferencee\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ProductServiceReference\Reference.svcmap">
+    <None Include="Connected Services\CustomerOrderServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CustomerOrderServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CustomerOrderServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CustomerServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CustomerServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CustomerServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

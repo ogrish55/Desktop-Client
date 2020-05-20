@@ -1,11 +1,5 @@
-﻿using GUI.ModelLayer;
-using GUI.ProductServiceReference;
-using System;
+﻿using GUI.ProductLineServiceReferencee;
 using System.Collections.Generic;
-using System.Linq;
-
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GUI.ServiceLayer
 {
@@ -15,7 +9,7 @@ namespace GUI.ServiceLayer
         {
             IEnumerable<ServiceProduct> proxyProducts = null;
 
-            using (ProductServiceClient productProxy = new ProductServiceClient())
+            using (ProductLineServiceClient productProxy = new ProductLineServiceClient())
             {
                 proxyProducts = productProxy.GetAllProducts();
             }
@@ -25,8 +19,8 @@ namespace GUI.ServiceLayer
 
         public void InsertProduct(ServiceProduct product)
         {
-            
-            using(ProductServiceClient productProxy = new ProductServiceClient())
+
+            using (ProductLineServiceClient productProxy = new ProductLineServiceClient())
             {
                 productProxy.InsertProduct(product);
             }
@@ -34,7 +28,7 @@ namespace GUI.ServiceLayer
 
         public void DeleteProduct(int productId)
         {
-            using (ProductServiceClient productProxy = new ProductServiceClient())
+            using (ProductLineServiceClient productProxy = new ProductLineServiceClient())
             {
                 productProxy.DeleteProduct(productId);
             }
@@ -42,12 +36,31 @@ namespace GUI.ServiceLayer
 
         public void UpdateProduct(ServiceProduct product)
         {
-            using(ProductServiceClient productProxy = new ProductServiceClient())
+            using (ProductLineServiceClient productProxy = new ProductLineServiceClient())
             {
-                Console.WriteLine(product.Name);
-                Console.Read();
                 productProxy.UpdateProduct(product);
             }
         }
+
+        public IEnumerable<ServiceCategory> GetAllCategories()
+        {
+            IEnumerable<ServiceCategory> serviceCategories = null;
+            using (ProductLineServiceClient productProxy = new ProductLineServiceClient())
+            {
+                serviceCategories = productProxy.GetAllCategories();
+            }
+            return serviceCategories;
+        }
+
+        public IEnumerable<ServiceBrand> GetAllBrands()
+        {
+            IEnumerable<ServiceBrand> serviceBrands = null;
+            using (ProductLineServiceClient productProxy = new ProductLineServiceClient())
+            {
+                serviceBrands = productProxy.GetAllBrands();
+            }
+            return serviceBrands;
+        }
+
     }
 }
